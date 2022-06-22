@@ -821,8 +821,9 @@ GameObject:
   - component: {fileID: 6557461008341295268}
   - component: {fileID: 7183344727595542985}
   - component: {fileID: 6817369165481697045}
+  - component: {fileID: 7718316048362029890}
   m_Layer: 5
-  m_Name: StartGameInstruction
+  m_Name: PlayGameInstruction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -886,6 +887,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &7718316048362029890
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7438048312488892718}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fa77f7697c2a2a74ab80701985202776, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7604089612279721600
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,8 +916,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368801407120714470}
+  - component: {fileID: 2748057253291489411}
   m_Layer: 5
-  m_Name: StartGameView
+  m_Name: PlayGameView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -923,6 +945,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.0024414062}
   m_SizeDelta: {x: -115.11, y: -623.93}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2748057253291489411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7604089612279721600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f308c16be996ca4fb4a7fae6ab792b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Image: {fileID: 6817369165481697045}
 --- !u!1 &7633194730921883638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,6 +1182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fc7a401983f2d84d8ae89a3b5263931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayGameView: {fileID: 2748057253291489411}
 --- !u!1 &7858045884624144929
 GameObject:
   m_ObjectHideFlags: 0
