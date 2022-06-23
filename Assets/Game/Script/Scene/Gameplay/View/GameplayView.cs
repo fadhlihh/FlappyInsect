@@ -2,6 +2,7 @@ using UnityEngine;
 
 using Game.Base.MVC;
 using Game.Module.PlayGame;
+using Game.Module.Pipe;
 
 namespace Game.Scene.Gameplay
 {
@@ -9,5 +10,9 @@ namespace Game.Scene.Gameplay
     {
         [SerializeField]
         public PlayGameView PlayGameView;
+        [SerializeField]
+        public PipeScrollView PipeScrollView;
+        [SerializeField]
+        public PipeDespawnView PipeDespawnView;
     }
 }

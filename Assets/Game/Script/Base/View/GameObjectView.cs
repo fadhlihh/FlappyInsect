@@ -1,9 +1,10 @@
 using UnityEngine;
 
-namespace Game
+using Agate.MVC.Base;
+
+namespace Game.Base.MVC
 {
-    public class GameObjectView : MonoBehaviour
-    {
-        
-    }
+    public abstract class GameObjectView<TModel> : ObjectView<TModel>
+    where TModel : IGameBaseModel
+    { }
 }
