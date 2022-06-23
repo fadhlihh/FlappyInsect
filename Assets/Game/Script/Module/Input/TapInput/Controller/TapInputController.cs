@@ -20,7 +20,6 @@ namespace Game.Module.Input
         {
             if (context.performed)
             {
-                Debug.Log("Start");
                 _model.InputActionsManager.Character.Enable();
                 _model.InputActionsManager.UI.Disable();
                 Publish<TapStartMessage>(new TapStartMessage());
@@ -31,7 +30,7 @@ namespace Game.Module.Input
         {
             if (context.performed)
             {
-                Debug.Log("Pop");
+                Publish<TapMessage>(new TapMessage());
             }
         }
     }
