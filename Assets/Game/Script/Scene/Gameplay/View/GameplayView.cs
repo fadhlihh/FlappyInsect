@@ -4,6 +4,7 @@ using Game.Base.MVC;
 using Game.Module.PlayGame;
 using Game.Module.Pipe;
 using Game.Module.Bird;
+using Game.Module.Score;
 
 namespace Game.Scene.Gameplay
 {
@@ -21,5 +22,7 @@ namespace Game.Scene.Gameplay
         public BirdAddScoreView BirdAddScoreView;
         [SerializeField]
         public BirdDeathView BirdDeathView;
+        [SerializeField]
+        public ScoreCounterView ScoreCounterView;
     }
 }

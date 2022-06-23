@@ -11,6 +11,7 @@ using Game.Module.Input;
 using Game.Module.PlayGame;
 using Game.Module.Pipe;
 using Game.Module.Bird;
+using Game.Module.Score;
 
 namespace Game.Scene.Gameplay
 {
@@ -25,13 +26,16 @@ namespace Game.Scene.Gameplay
         private BirdMovementController _birdMovement;
         private BirdAddScoreController _birdAddScore;
         private BirdDeathController _birdDeath;
+        private ScoreCounterController _scoreCounter;
         protected override IConnector[] GetSceneConnectors()
         {
             return new IConnector[] {
                 new PlayGameConnector(),
                 new PipeSpawnConnector(),
                 new PipeScrollConnector(),
-                new BirdMovementConnector()
+                new BirdMovementConnector(),
+                new ScoreCounterConnector(),
+                new AddScoreAudiConnector()
             };
         }
 
@@ -41,7 +45,8 @@ namespace Game.Scene.Gameplay
                 new TapInputController(),
                 new PlayGameController(),
                 new PipeController(),
-                new BirdController()
+                new BirdController(),
+                new ScoreController()
         };
         }
 
@@ -63,6 +68,7 @@ namespace Game.Scene.Gameplay
             _birdMovement.SetView(_view.BirdMovementView);
             _birdAddScore.SetView(_view.BirdAddScoreView);
             _birdDeath.SetView(_view.BirdDeathView);
+            _scoreCounter.SetView(_view.ScoreCounterView);
             yield return null;
         }
 

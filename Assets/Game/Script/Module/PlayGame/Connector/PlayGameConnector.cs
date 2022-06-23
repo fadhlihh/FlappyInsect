@@ -16,7 +16,7 @@ namespace Game.Module.PlayGame
 
         protected override void Disconnect()
         {
-            throw new System.NotImplementedException();
+            Unsubscribe<TapStartMessage>(_playGameController.OnDisablePlayGameView);
         }
     }
 }

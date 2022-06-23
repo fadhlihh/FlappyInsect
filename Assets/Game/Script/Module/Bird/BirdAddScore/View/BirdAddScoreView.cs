@@ -16,7 +16,6 @@ namespace Game.Module.Bird
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            Debug.Log("Collision");
             _onAddScore?.Invoke(other.transform);
         }
     }
