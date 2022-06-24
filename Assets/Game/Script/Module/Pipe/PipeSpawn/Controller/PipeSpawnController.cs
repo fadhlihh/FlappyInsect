@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 
 using Game.Base.MVC;
 using Game.Module.Input;
+using Game.Module.Bird;
 
 namespace Game.Module.Pipe
 {
@@ -22,6 +23,11 @@ namespace Game.Module.Pipe
                 _model.MoveSpawnPoint();
                 await Task.Delay(_model.SpawnDelay);
             }
+        }
+
+        public void OnGameOver(BirdDeathMessage message)
+        {
+            _model.SetIsPlaying(false);
         }
     }
 }

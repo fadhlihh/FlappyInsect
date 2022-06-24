@@ -1,6 +1,7 @@
 using UnityEngine;
 
 using Game.Base.MVC;
+using Game.Module.Bird;
 using System.Collections;
 using UnityEngine.InputSystem;
 
@@ -32,6 +33,11 @@ namespace Game.Module.Input
             {
                 Publish<TapMessage>(new TapMessage());
             }
+        }
+
+        public void OnGameOver(BirdDeathMessage message)
+        {
+            _model.InputActionsManager.Character.Disable();
         }
     }
 }

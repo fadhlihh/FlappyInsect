@@ -16,11 +16,13 @@ namespace Game.Module.Pipe
         public void SetIsPlaying(bool isPlaying)
         {
             IsPlaying = isPlaying;
+            SetDataAsDirty();
         }
 
         public void MoveSpawnPoint()
         {
             SpawnPoint += Vector3.right * SpawnGap;
+            SetDataAsDirty();
         }
     }
 }

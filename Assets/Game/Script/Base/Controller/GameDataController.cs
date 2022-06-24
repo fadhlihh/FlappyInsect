@@ -8,4 +8,10 @@ namespace Game.Base.MVC
     where TController : DataController<TController, TModel>
     where TModel : BaseModel, new()
     { }
+
+    public abstract class GameDataController<TController, TModel, TInterfaceModel> : DataController<TController, TModel, TInterfaceModel>
+    where TController : DataController<TController, TModel, TInterfaceModel>
+    where TModel : BaseModel, TInterfaceModel, new()
+    where TInterfaceModel : IBaseModel
+    { }
 }

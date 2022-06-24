@@ -5,6 +5,7 @@ using Game.Module.PlayGame;
 using Game.Module.Pipe;
 using Game.Module.Bird;
 using Game.Module.Score;
+using Game.Module.GameOver;
 
 namespace Game.Scene.Gameplay
 {
@@ -24,5 +25,7 @@ namespace Game.Scene.Gameplay
         public BirdDeathView BirdDeathView;
         [SerializeField]
         public ScoreCounterView ScoreCounterView;
+        [SerializeField]
+        public GameOverPopUpView GameOverPopUpView;
     }
 }

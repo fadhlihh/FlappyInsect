@@ -6,6 +6,7 @@ namespace Game.Module.Pipe
 {
     public interface IPipeScrollModel : IGameBaseModel
     {
+        public bool IsPlaying { get; }
         public float ScrollSpeed { get; }
     }
 }
