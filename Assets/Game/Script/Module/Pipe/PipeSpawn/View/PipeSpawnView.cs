@@ -24,6 +24,10 @@ namespace Game.Module.Pipe
 
         protected override void InitRenderModel(IPipeSpawnModel model)
         {
+            if (model.IsPlaying)
+            {
+                StartCoroutine(InvokeSpawn(model.SpawnRate));
+            }
         }
 
         protected override void UpdateRenderModel(IPipeSpawnModel model)

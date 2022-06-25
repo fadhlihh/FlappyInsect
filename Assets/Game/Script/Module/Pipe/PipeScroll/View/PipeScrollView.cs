@@ -9,7 +9,7 @@ namespace Game.Module.Pipe
     {
         private UnityAction _onMovePosition;
 
-        public void Init(UnityAction onMovePosition)
+        public void SetCallbacks(UnityAction onMovePosition)
         {
             _onMovePosition = onMovePosition;
         }
@@ -21,11 +21,15 @@ namespace Game.Module.Pipe
 
         protected override void InitRenderModel(IPipeScrollModel model)
         {
+            transform.position = model.Position;
         }
 
         protected override void UpdateRenderModel(IPipeScrollModel model)
         {
-
+            if (model.IsPlaying)
+            {
+                transform.position = model.Position;
+            }
         }
     }
 }

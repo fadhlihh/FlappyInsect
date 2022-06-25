@@ -12,14 +12,15 @@ namespace Game.Module.Pipe
         public void OnPlayGame(TapStartMessage message)
         {
             _model.SetIsPlaying(true);
-            _view.Init(OnMovePosition);
+            _view.SetCallbacks(OnMovePosition);
         }
 
         public void OnMovePosition()
         {
             if (_model.IsPlaying)
             {
-                _view.transform.Translate(Vector3.left * _model.ScrollSpeed * Time.deltaTime);
+                Vector3 position = _model.Position + (Vector3.left * _model.ScrollSpeed * Time.deltaTime);
+                _model.SetPosition(position);
             }
         }
 
