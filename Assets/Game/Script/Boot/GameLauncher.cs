@@ -19,8 +19,8 @@ namespace Game.Boot
         protected override IController[] GetSystemDependencies()
         {
             return new IController[] {
-                new HighScoreCounterController(),
-                new SaveDataController()
+                new SaveDataController(),
+                new HighScoreCounterController()
             };
         }
 

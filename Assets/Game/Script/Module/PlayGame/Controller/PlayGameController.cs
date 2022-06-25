@@ -5,11 +5,11 @@ using Game.Module.Input;
 
 namespace Game.Module.PlayGame
 {
-    public class PlayGameController : GameObjectController<PlayGameController, PlayGameView>
+    public class PlayGameController : GameObjectController<PlayGameController, PlayGameModel, IPlayGameModel, PlayGameView>
     {
-        public void OnDisablePlayGameView(TapStartMessage message)
+        public void OnTapStart(TapStartMessage message)
         {
-            _view.Image.gameObject.SetActive(false);
+            _model.SetIsPlaying(true);
         }
     }
 }

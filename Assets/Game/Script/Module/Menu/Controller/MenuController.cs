@@ -10,6 +10,7 @@ namespace Game.Module.Menu
 {
     public class MenuController : GameObjectController<MenuController, MenuView>
     {
+        // Buat model
         HighScoreCounterController _highScoreCounter;
         public override void SetView(MenuView view)
         {

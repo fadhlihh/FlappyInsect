@@ -11,12 +11,12 @@ namespace Game.Module.PlayGame
         private PlayGameController _playGameController;
         protected override void Connect()
         {
-            Subscribe<TapStartMessage>(_playGameController.OnDisablePlayGameView);
+            Subscribe<TapStartMessage>(_playGameController.OnTapStart);
         }
 
         protected override void Disconnect()
         {
-            Unsubscribe<TapStartMessage>(_playGameController.OnDisablePlayGameView);
+            Unsubscribe<TapStartMessage>(_playGameController.OnTapStart);
         }
     }
 }

@@ -1481,9 +1481,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3716817834831949533}
+  - component: {fileID: 557836456157872892}
   - component: {fileID: 4845365268295326610}
   m_Layer: 0
-  m_Name: PipeScrollView
+  m_Name: PipeContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1504,6 +1505,18 @@ Transform:
   m_Father: {fileID: 7633194731346029869}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &557836456157872892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6026198681100773336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139beb6144ca36f40ab9d178a70f5ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4845365268295326610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1663,7 +1676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f308c16be996ca4fb4a7fae6ab792b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Image: {fileID: 6817369165481697045}
+  _playInstruction: {fileID: 6817369165481697045}
 --- !u!1 &7633194730921883638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,6 +1831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayGameView: {fileID: 2748057253291489411}
+  PipeSpawnView: {fileID: 557836456157872892}
   PipeScrollView: {fileID: 4845365268295326610}
   PipeDespawnView: {fileID: 4063486240561935591}
   BirdMovementView: {fileID: 1643062131679517191}

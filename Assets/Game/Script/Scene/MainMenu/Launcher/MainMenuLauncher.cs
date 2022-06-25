@@ -43,7 +43,6 @@ namespace Game.Scene.MainMenu
 
         protected override IEnumerator InitSceneObject()
         {
-            _highScoreCounter.LoadHighScore();
             _menu.SetView(_mainMenuView.MenuView);
             yield return null;
         }

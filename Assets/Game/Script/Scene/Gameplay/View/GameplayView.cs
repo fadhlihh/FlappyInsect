@@ -14,6 +14,8 @@ namespace Game.Scene.Gameplay
         [SerializeField]
         public PlayGameView PlayGameView;
         [SerializeField]
+        public PipeSpawnView PipeSpawnView;
+        [SerializeField]
         public PipeScrollView PipeScrollView;
         [SerializeField]
         public PipeDespawnView PipeDespawnView;

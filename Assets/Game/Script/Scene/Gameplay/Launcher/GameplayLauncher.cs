@@ -22,6 +22,7 @@ namespace Game.Scene.Gameplay
         private GameplayView _gameplayView;
 
         private PlayGameController _playGame;
+        private PipeSpawnController _pipeSpawn;
         private PipeScrollController _pipeScroll;
         private PipeDespawnController _pipeDespawn;
         private BirdMovementController _birdMovement;
@@ -29,18 +30,6 @@ namespace Game.Scene.Gameplay
         private BirdDeathController _birdDeath;
         private ScoreCounterController _scoreCounter;
         private GameOverPopUpController _gameOverPopUp;
-
-        public GameplayView GamePlayView
-        {
-            get
-            {
-                if (_gameplayView == null)
-                {
-                    _gameplayView = Instantiate(Resources.Load("Prefabs/Gameplay/View/GameplayView")) as GameplayView;
-                }
-                return _gameplayView;
-            }
-        }
 
         protected override IConnector[] GetSceneConnectors()
         {
@@ -86,13 +75,13 @@ namespace Game.Scene.Gameplay
 
         protected override GameplayView GetSceneView()
         {
-            return GamePlayView;
+            return _gameplayView;
         }
 
         protected override IEnumerator InitSceneObject()
         {
-            Debug.Log(_view);
             _playGame.SetView(_view.PlayGameView);
+            _pipeSpawn.SetView(_view.PipeSpawnView);
             _pipeScroll.SetView(_view.PipeScrollView);
             _pipeDespawn.SetView(_view.PipeDespawnView);
             _birdMovement.SetView(_view.BirdMovementView);

@@ -8,21 +8,25 @@ using Game.Module.Bird;
 
 namespace Game.Module.Pipe
 {
-    public class PipeSpawnController : GameDataController<PipeSpawnController, PipeSpawnModel>
+    public class PipeSpawnController : GameObjectController<PipeSpawnController, PipeSpawnModel, IPipeSpawnModel, PipeSpawnView>
     {
-        private PipeScrollController _pipeScroll;
-        public async void OnPlayGame(TapStartMessage message)
+        public override void SetView(PipeSpawnView view)
+        {
+            base.SetView(view);
+            view.SetCallback(OnSpawnPipe);
+        }
+        public void OnPlayGame(TapStartMessage message)
         {
             _model.SetIsPlaying(true);
-            while (_model.IsPlaying)
-            {
-                GameObject pipe = Object.Instantiate(Resources.Load("Prefabs/Pipe/Pipe")) as GameObject;
-                pipe.transform.SetParent(_pipeScroll.View.transform);
-                Vector3 pipeYPosition = Vector3.up * Random.Range(_model.MinYSpawnPoint, _model.MaxYSpawnPoint);
-                pipe.transform.localPosition = _model.SpawnPoint + pipeYPosition;
-                _model.MoveSpawnPoint();
-                await Task.Delay(_model.SpawnDelay);
-            }
+        }
+
+        public void OnSpawnPipe()
+        {
+            GameObject pipe = Object.Instantiate(Resources.Load("Prefabs/Pipe/Pipe")) as GameObject;
+            pipe.transform.SetParent(_view.transform);
+            Vector3 pipeYPosition = Vector3.up * Random.Range(_model.MinYSpawnPoint, _model.MaxYSpawnPoint);
+            pipe.transform.localPosition = _model.SpawnPoint + pipeYPosition;
+            _model.MoveSpawnPoint();
         }
 
         public void OnGameOver(BirdDeathMessage message)

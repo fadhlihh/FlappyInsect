@@ -9,14 +9,6 @@ namespace Game.Module.Pipe
 {
     public class PipeScrollController : GameObjectController<PipeScrollController, PipeScrollModel, IPipeScrollModel, PipeScrollView>
     {
-        public PipeScrollView View
-        {
-            get
-            {
-                return _view;
-            }
-        }
-
         public void OnPlayGame(TapStartMessage message)
         {
             _model.SetIsPlaying(true);

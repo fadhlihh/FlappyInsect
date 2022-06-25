@@ -1,19 +1,20 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 using Game.Base.MVC;
 using Game.Module.Bird;
-using System.Collections;
-using UnityEngine.InputSystem;
 
 namespace Game.Module.Input
 {
-    public class TapInputController : GameDataController<TapInputController, TapInputModel>
+    public class TapInputController : GameBaseController<TapInputController>
     {
+        private InputActionManager InputActionsManager = new InputActionManager();
         public override IEnumerator Initialize()
         {
-            _model.InputActionsManager.UI.Enable();
-            _model.InputActionsManager.UI.TapStart.performed += OnTapStart;
-            _model.InputActionsManager.Character.Tap.performed += OnTap;
+            InputActionsManager.UI.Enable();
+            InputActionsManager.UI.TapStart.performed += OnTapStart;
+            InputActionsManager.Character.Tap.performed += OnTap;
             return base.Initialize();
         }
 
@@ -21,8 +22,8 @@ namespace Game.Module.Input
         {
             if (context.performed)
             {
-                _model.InputActionsManager.Character.Enable();
-                _model.InputActionsManager.UI.Disable();
+                InputActionsManager.Character.Enable();
+                InputActionsManager.UI.Disable();
                 Publish<TapStartMessage>(new TapStartMessage());
             }
         }
@@ -37,7 +38,7 @@ namespace Game.Module.Input
 
         public void OnGameOver(BirdDeathMessage message)
         {
-            _model.InputActionsManager.Character.Disable();
+            InputActionsManager.Character.Disable();
         }
     }
 }
