@@ -8,7 +8,7 @@ namespace Game.Module.Pipe
     public class PipeDespawnView : GameBaseView
     {
         private UnityAction<Transform> _onDespawnPipe;
-        public void Init(UnityAction<Transform> onDespawnPipe)
+        public void SetCallbacks(UnityAction<Transform> onDespawnPipe)
         {
             _onDespawnPipe = onDespawnPipe;
         }

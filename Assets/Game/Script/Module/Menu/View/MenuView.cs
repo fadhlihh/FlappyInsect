@@ -7,7 +7,7 @@ using Game.Base.MVC;
 
 namespace Game.Module.Menu
 {
-    public class MenuView : GameBaseView
+    public class MenuView : GameObjectView<IMenuModel>
     {
         [SerializeField]
         private Button _playButton;
@@ -16,13 +16,22 @@ namespace Game.Module.Menu
         [SerializeField]
         private TextMeshProUGUI _highScoreText;
 
-        public void Init(UnityAction onPlay, UnityAction onExit, int highScore)
+        public void SetCallbacks(UnityAction onPlay, UnityAction onExit)
         {
             _playButton.onClick.RemoveAllListeners();
             _playButton.onClick.AddListener(onPlay);
             _exitGameButton.onClick.RemoveAllListeners();
             _exitGameButton.onClick.AddListener(onExit);
-            _highScoreText.text = $"High Score: {highScore}";
+        }
+
+        protected override void InitRenderModel(IMenuModel model)
+        {
+            _highScoreText.text = $"High Score: {model.HighScore}";
+        }
+
+        protected override void UpdateRenderModel(IMenuModel model)
+        {
+            _highScoreText.text = $"High Score: {model.HighScore}";
         }
     }
 }

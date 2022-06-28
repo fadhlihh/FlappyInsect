@@ -2,18 +2,24 @@ using UnityEngine;
 
 using Game.Base.MVC;
 using Game.Module.Input;
+using System.Collections;
 
 namespace Game.Module.Bird
 {
-    public class BirdMovementController : GameObjectController<BirdMovementController, BirdMovementModel, IBirdMovementModel, BirdMovementView>
+    public class BirdMovementController : GameDataController<BirdMovementController, BirdMovementModel>
     {
+        private Rigidbody2D _birdPhysics;
         public void OnTapStart(TapStartMessage message)
         {
-            _view.GetComponent<Rigidbody2D>().gravityScale = 0.5f;
+            _birdPhysics.gravityScale = _model.GravityScale;
         }
         public void OnMoveBird(TapMessage message)
         {
-            _view.GetComponent<Rigidbody2D>().AddForce(Vector2.up * _model.Force * Time.fixedDeltaTime, ForceMode2D.Force);
+            _birdPhysics.AddForce(Vector2.up * _model.Force * Time.fixedDeltaTime, ForceMode2D.Force);
+        }
+        public void GetBirdPhysics(Rigidbody2D birdPhysics)
+        {
+            _birdPhysics = birdPhysics;
         }
     }
 }

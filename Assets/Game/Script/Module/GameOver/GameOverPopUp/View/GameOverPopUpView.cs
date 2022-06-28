@@ -7,7 +7,7 @@ using Game.Base.MVC;
 
 namespace Game.Module.GameOver
 {
-    public class GameOverPopUpView : GameBaseView
+    public class GameOverPopUpView : GameObjectView<IGameOverPopUpModel>
     {
         [SerializeField]
         private GameObject _gameOverPopUp;
@@ -20,15 +20,29 @@ namespace Game.Module.GameOver
         [SerializeField]
         private Button _mainMenuButton;
 
-        public void Init(int score, int highScore, UnityAction onRestart, UnityAction onToMainMenu)
+        public void SetCallbacks(UnityAction onRestart, UnityAction onToMainMenu)
         {
-            _gameOverPopUp.SetActive(true);
-            _scoreText.text = $"Your Score: {score.ToString()}";
-            _highScoreText.text = $"High Score: {highScore.ToString()}";
             _restartButton.onClick.RemoveAllListeners();
             _restartButton.onClick.AddListener(onRestart);
             _mainMenuButton.onClick.RemoveAllListeners();
             _mainMenuButton.onClick.AddListener(onToMainMenu);
+        }
+
+        public void ShowGameOverPopUp()
+        {
+            _gameOverPopUp.SetActive(true);
+        }
+
+        protected override void InitRenderModel(IGameOverPopUpModel model)
+        {
+            _scoreText.text = $"Your Score: {model.Score}";
+            _highScoreText.text = $"High Score: {model.HighScore}";
+        }
+
+        protected override void UpdateRenderModel(IGameOverPopUpModel model)
+        {
+            _scoreText.text = $"Your Score: {model.Score}";
+            _highScoreText.text = $"High Score: {model.HighScore}";
         }
     }
 }

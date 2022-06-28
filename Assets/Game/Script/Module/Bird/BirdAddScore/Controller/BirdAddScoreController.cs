@@ -9,7 +9,7 @@ namespace Game.Module.Bird
         public override void SetView(BirdAddScoreView view)
         {
             base.SetView(view);
-            view.Init(OnAddScore);
+            view.SetCallbacks(OnAddScore);
         }
 
         public void OnAddScore(Transform collision)

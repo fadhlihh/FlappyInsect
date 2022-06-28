@@ -111,7 +111,6 @@ GameObject:
   - component: {fileID: 4691976851144530208}
   - component: {fileID: 781712081853799824}
   - component: {fileID: 7344843220966995058}
-  - component: {fileID: 1643062131679517191}
   - component: {fileID: 2607729904685082096}
   m_Layer: 0
   m_Name: Bird
@@ -245,18 +244,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.14
---- !u!114 &1643062131679517191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 79803675840959074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a85b33c05950dc248b5aaa1ed669f3f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2607729904685082096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1822,7 +1809,8 @@ MonoBehaviour:
   PipeSpawnView: {fileID: 659946221596237507}
   PipeScrollView: {fileID: 4845365268295326610}
   PipeDespawnView: {fileID: 4063486240561935591}
-  BirdMovementView: {fileID: 1643062131679517191}
+  BirdPhysics: {fileID: 781712081853799824}
+  BirdMovementView: {fileID: 0}
   BirdAddScoreView: {fileID: 9106378886271886756}
   BirdDeathView: {fileID: 2607729904685082096}
   ScoreCounterView: {fileID: 1391270462420543794}

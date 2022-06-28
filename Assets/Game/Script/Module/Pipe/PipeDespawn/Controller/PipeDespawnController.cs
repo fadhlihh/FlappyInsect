@@ -9,7 +9,7 @@ namespace Game.Module.Pipe
         public override void SetView(PipeDespawnView view)
         {
             base.SetView(view);
-            view.Init(OnDespawnPipe);
+            view.SetCallbacks(OnDespawnPipe);
         }
 
         public void OnDespawnPipe(Transform collision)

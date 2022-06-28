@@ -20,7 +20,7 @@ namespace Game.Scene.Gameplay
         [SerializeField]
         public PipeDespawnView PipeDespawnView;
         [SerializeField]
-        public BirdMovementView BirdMovementView;
+        public Rigidbody2D BirdPhysics;
         [SerializeField]
         public BirdAddScoreView BirdAddScoreView;
         [SerializeField]

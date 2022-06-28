@@ -9,7 +9,7 @@ namespace Game.Module.Bird
     {
         UnityAction<Transform> _onAddScore;
 
-        public void Init(UnityAction<Transform> onAddScore)
+        public void SetCallbacks(UnityAction<Transform> onAddScore)
         {
             _onAddScore = onAddScore;
         }

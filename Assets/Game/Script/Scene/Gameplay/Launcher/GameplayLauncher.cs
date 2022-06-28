@@ -51,18 +51,14 @@ namespace Game.Scene.Gameplay
             return new IController[] {
                 new TapInputController(),
                 new PlayGameController(),
-                // new PipeController(),
                 new PipeSpawnController(),
                 new PipeScrollController(),
                 new PipeDespawnController(),
-                // new BirdController(),
                 new BirdDeathController(),
                 new BirdMovementController(),
                 new BirdAddScoreController(),
-                // new ScoreController(),
                 new ScoreCounterController(),
                 new AddScoreAudioController(),
-                // new GameOverController()
                 new GameOverPopUpController(),
                 new GameOverAudioController()
         };
@@ -84,7 +80,7 @@ namespace Game.Scene.Gameplay
             _pipeSpawn.SetView(_view.PipeSpawnView);
             _pipeScroll.SetView(_view.PipeScrollView);
             _pipeDespawn.SetView(_view.PipeDespawnView);
-            _birdMovement.SetView(_view.BirdMovementView);
+            _birdMovement.GetBirdPhysics(_view.BirdPhysics);
             _birdAddScore.SetView(_view.BirdAddScoreView);
             _birdDeath.SetView(_view.BirdDeathView);
             _scoreCounter.SetView(_view.ScoreCounterView);
@@ -94,7 +90,6 @@ namespace Game.Scene.Gameplay
 
         protected override IEnumerator LaunchScene()
         {
-
             yield return null;
         }
     }

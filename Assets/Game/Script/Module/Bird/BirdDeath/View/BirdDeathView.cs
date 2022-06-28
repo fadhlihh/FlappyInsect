@@ -8,7 +8,7 @@ namespace Game.Module.Bird
     public class BirdDeathView : GameBaseView
     {
         UnityAction<Transform> _onBirdCollide;
-        public void Init(UnityAction<Transform> onBirdCollide)
+        public void SetCallbacks(UnityAction<Transform> onBirdCollide)
         {
             _onBirdCollide = onBirdCollide;
         }

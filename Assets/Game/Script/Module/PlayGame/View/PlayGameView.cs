@@ -12,13 +12,11 @@ namespace Game.Module.PlayGame
 
         protected override void InitRenderModel(IPlayGameModel model)
         {
-            Debug.Log("Something change");
             _playInstruction.gameObject.SetActive(!model.IsPlaying);
         }
 
         protected override void UpdateRenderModel(IPlayGameModel model)
         {
-            Debug.Log("Something change");
             _playInstruction.gameObject.SetActive(!model.IsPlaying);
         }
     }
