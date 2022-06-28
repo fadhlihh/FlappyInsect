@@ -1,5 +1,3 @@
-using UnityEngine;
-
 using Game.Base.MVC;
 using Game.Module.Input;
 using Game.Module.Bird;
@@ -12,6 +10,7 @@ namespace Game.Module.Score
         {
             _view.ScoreText.gameObject.SetActive(true);
         }
+
         public void OnAddScore(BirdAddScoreMessage message)
         {
             _model.AddScore();

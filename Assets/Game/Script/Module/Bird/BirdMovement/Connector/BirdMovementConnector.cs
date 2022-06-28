@@ -1,5 +1,3 @@
-using UnityEngine;
-
 using Game.Base.MVC;
 using Game.Module.Input;
 

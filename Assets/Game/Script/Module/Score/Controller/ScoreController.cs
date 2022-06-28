@@ -1,7 +1,6 @@
-using UnityEngine;
+using Agate.MVC.Core;
 
 using Game.Base.MVC;
-using Agate.MVC.Core;
 
 namespace Game.Module.Score
 {

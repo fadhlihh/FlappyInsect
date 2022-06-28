@@ -1,8 +1,6 @@
-using UnityEngine;
-
 using Game.Base.MVC;
 
-namespace Game.Base.MVC
+namespace Game.Module.PlayGame
 {
     public interface IPlayGameModel : IGameBaseModel
     {

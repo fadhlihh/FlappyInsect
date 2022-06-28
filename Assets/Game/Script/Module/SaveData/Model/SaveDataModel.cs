@@ -1,5 +1,3 @@
-using UnityEngine;
-
 using Game.Base.MVC;
 
 namespace Game.Module.SaveData

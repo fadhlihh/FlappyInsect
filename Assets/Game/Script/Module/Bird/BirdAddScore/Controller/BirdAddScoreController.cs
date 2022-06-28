@@ -14,10 +14,10 @@ namespace Game.Module.Bird
 
         public void OnAddScore(Transform collision)
         {
-            if (collision.CompareTag("Hole"))
+            bool isTroughPipeHole = collision.CompareTag("Hole");
+            if (isTroughPipeHole)
             {
                 Publish<BirdAddScoreMessage>(new BirdAddScoreMessage());
-                Debug.Log("Add Score");
             }
         }
     }

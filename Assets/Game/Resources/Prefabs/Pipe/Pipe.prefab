@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 8792487498706834823}
   - component: {fileID: 8563813691292623119}
   m_Layer: 0
-  m_Name: PipeTop
+  m_Name: PipeBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +88,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1647302084508189075}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8563813691292623119
 SpriteRenderer:
@@ -173,8 +173,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8792487498706834823}
   - {fileID: 6888611003375826797}
+  - {fileID: 8792487498706834823}
   - {fileID: 5548271032736400424}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -218,7 +218,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -4.18}
+  m_Offset: {x: 0, y: -4.22}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 6888611003375826797}
   - component: {fileID: 473198054836617875}
   m_Layer: 0
-  m_Name: PipeBottom
+  m_Name: PipeTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -282,7 +282,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1647302084508189075}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 0}
 --- !u!212 &473198054836617875
 SpriteRenderer:

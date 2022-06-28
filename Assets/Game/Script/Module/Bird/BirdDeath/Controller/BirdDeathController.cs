@@ -10,6 +10,7 @@ namespace Game.Module.Bird
     {
         private ScoreCounterController _scoreCounter;
         private HighScoreCounterController _highScoreCounter;
+
         public override void SetView(BirdDeathView view)
         {
             base.SetView(view);
@@ -18,9 +19,11 @@ namespace Game.Module.Bird
 
         public void OnGameOver(Transform collision)
         {
-            if (collision.CompareTag("Ground") || collision.CompareTag("Pipe"))
+            bool isCollideWithGround = collision.CompareTag("Ground");
+            bool isCollideWithPipe = collision.CompareTag("Pipe");
+            if (isCollideWithGround || isCollideWithPipe)
             {
-                Component.Destroy(_view.GetComponent<CircleCollider2D>());
+                _view.GetComponent<CircleCollider2D>().enabled = false;
                 _highScoreCounter.CheckHighScore(_scoreCounter.Model.Score);
                 Publish<BirdDeathMessage>(new BirdDeathMessage(_scoreCounter.Model.Score, _highScoreCounter.Model.HighScore));
             }

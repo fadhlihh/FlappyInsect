@@ -1,8 +1,7 @@
-using UnityEngine;
+using System.Collections;
 
 using Game.Base.MVC;
 using Game.Module.SaveData;
-using System.Collections;
 
 namespace Game.Module.HighScore
 {
@@ -15,11 +14,6 @@ namespace Game.Module.HighScore
             /// there are bugs if you run this code
             // LoadHighScore();
             return base.Initialize();
-        }
-
-        public void LoadHighScore()
-        {
-            _model.SetHighScore(_saveData.Model.HighScoreData);
         }
 
         public void CheckHighScore(int score)
@@ -35,6 +29,11 @@ namespace Game.Module.HighScore
         {
             _model.SetHighScore(score);
             Publish<UpdateHighScoreMessage>(new UpdateHighScoreMessage(score));
+        }
+
+        private void LoadHighScore()
+        {
+            _model.SetHighScore(_saveData.Model.HighScoreData);
         }
     }
 }

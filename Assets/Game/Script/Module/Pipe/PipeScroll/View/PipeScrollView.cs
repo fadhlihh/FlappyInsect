@@ -1,4 +1,3 @@
-using UnityEngine;
 using UnityEngine.Events;
 
 using Game.Base.MVC;
@@ -14,11 +13,6 @@ namespace Game.Module.Pipe
             _onMovePosition = onMovePosition;
         }
 
-        private void Update()
-        {
-            _onMovePosition?.Invoke();
-        }
-
         protected override void InitRenderModel(IPipeScrollModel model)
         {
             transform.position = model.Position;
@@ -30,6 +24,11 @@ namespace Game.Module.Pipe
             {
                 transform.position = model.Position;
             }
+        }
+
+        private void Update()
+        {
+            _onMovePosition?.Invoke();
         }
     }
 }

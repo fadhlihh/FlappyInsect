@@ -1,5 +1,3 @@
-using UnityEngine;
-
 using Game.Base.MVC;
 using Agate.MVC.Core;
 

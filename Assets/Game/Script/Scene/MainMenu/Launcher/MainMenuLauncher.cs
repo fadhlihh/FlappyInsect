@@ -1,5 +1,4 @@
 using System.Collections;
-
 using UnityEngine;
 
 using Agate.MVC.Base;
@@ -8,7 +7,6 @@ using Agate.MVC.Core;
 using Game.Boot;
 using Game.Utilty;
 using Game.Module.Menu;
-using Game.Module.HighScore;
 
 namespace Game.Scene.MainMenu
 {
@@ -18,7 +16,7 @@ namespace Game.Scene.MainMenu
         private MainMenuView _mainMenuView;
 
         private MenuController _menu;
-        private HighScoreCounterController _highScoreCounter;
+
         protected override IConnector[] GetSceneConnectors()
         {
             return new IConnector[] { };

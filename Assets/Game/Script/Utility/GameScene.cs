@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace Game.Utilty
 {
     public static class GameScene

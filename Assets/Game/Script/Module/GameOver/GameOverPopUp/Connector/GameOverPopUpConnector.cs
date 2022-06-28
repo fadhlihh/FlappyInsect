@@ -1,5 +1,3 @@
-using UnityEngine;
-
 using Game.Base.MVC;
 using Game.Module.Bird;
 using Game.Module.HighScore;
@@ -9,6 +7,7 @@ namespace Game.Module.GameOver
     public class GameOverPopUpConnector : GameConnector
     {
         private GameOverPopUpController _gameOverPopUp;
+
         protected override void Connect()
         {
             Subscribe<BirdDeathMessage>(_gameOverPopUp.OnGameOver);

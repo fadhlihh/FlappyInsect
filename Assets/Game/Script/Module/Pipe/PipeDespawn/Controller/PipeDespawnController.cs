@@ -12,9 +12,10 @@ namespace Game.Module.Pipe
             view.SetCallbacks(OnDespawnPipe);
         }
 
-        public void OnDespawnPipe(Transform collision)
+        private void OnDespawnPipe(Transform collision)
         {
-            if (collision.CompareTag("Pipe"))
+            bool isCollideWithPipe = collision.CompareTag("Pipe");
+            if (isCollideWithPipe)
             {
                 Object.Destroy(collision.gameObject);
             }

@@ -7,7 +7,7 @@ namespace Game.Module.Bird
 {
     public class BirdAddScoreView : GameBaseView
     {
-        UnityAction<Transform> _onAddScore;
+        private UnityAction<Transform> _onAddScore;
 
         public void SetCallbacks(UnityAction<Transform> onAddScore)
         {

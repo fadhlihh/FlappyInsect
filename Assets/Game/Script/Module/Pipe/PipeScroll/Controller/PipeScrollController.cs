@@ -1,7 +1,6 @@
 using UnityEngine;
 
 using Game.Base.MVC;
-
 using Game.Module.Input;
 using Game.Module.Bird;
 
@@ -15,18 +14,18 @@ namespace Game.Module.Pipe
             _view.SetCallbacks(OnMovePosition);
         }
 
-        public void OnMovePosition()
+        public void OnGameOver(BirdDeathMessage message)
+        {
+            _model.SetIsPlaying(false);
+        }
+
+        private void OnMovePosition()
         {
             if (_model.IsPlaying)
             {
                 Vector3 position = _model.Position + (Vector3.left * _model.ScrollSpeed * Time.deltaTime);
                 _model.SetPosition(position);
             }
-        }
-
-        public void OnGameOver(BirdDeathMessage message)
-        {
-            _model.SetIsPlaying(false);
         }
     }
 }

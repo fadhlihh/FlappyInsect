@@ -1,5 +1,3 @@
-using UnityEngine;
-
 using Game.Base.MVC;
 using Game.Module.Input;
 using Game.Module.Bird;
@@ -9,6 +7,7 @@ namespace Game.Module.Pipe
     public class PipeSpawnConnector : GameConnector
     {
         private PipeSpawnController _pipeSpawn;
+
         protected override void Connect()
         {
             Subscribe<TapStartMessage>(_pipeSpawn.OnPlayGame);

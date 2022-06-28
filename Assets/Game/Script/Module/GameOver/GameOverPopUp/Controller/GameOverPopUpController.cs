@@ -1,4 +1,3 @@
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 using Game.Base.MVC;
@@ -25,12 +24,12 @@ namespace Game.Module.GameOver
             _model.SetHighScore(message.HighScore);
         }
 
-        public void OnRestart()
+        private void OnRestart()
         {
             SceneLoader.Instance.RestartScene();
         }
 
-        public void OnToMainMenu()
+        private void OnToMainMenu()
         {
             SceneManager.LoadScene(GameScene.MainMenu, LoadSceneMode.Additive);
         }

@@ -1,7 +1,7 @@
+using System.Collections;
 using UnityEngine;
 
 using Game.Base.MVC;
-using System.Collections;
 
 namespace Game.Module.SaveData
 {
@@ -12,6 +12,7 @@ namespace Game.Module.SaveData
             Load();
             return base.Initialize();
         }
+
         public void Save(int highScore)
         {
             _model.SetHighScoreData(highScore);

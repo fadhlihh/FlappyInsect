@@ -1,10 +1,10 @@
-using UnityEngine;
 using Agate.MVC.Base;
 
 namespace Game.Boot
 {
     public class SceneLoader : BaseLoader<SceneLoader>
     {
+        /// There are bugs in loading screen
         // private GameObject _loadingScreen;
         // protected override void ShowLoadingView()
         // {

@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEngine;
 using UnityEngine.InputSystem;
 
 using Game.Base.MVC;
@@ -18,7 +17,12 @@ namespace Game.Module.Input
             return base.Initialize();
         }
 
-        public void OnTapStart(InputAction.CallbackContext context)
+        public void OnGameOver(BirdDeathMessage message)
+        {
+            InputActionsManager.Character.Disable();
+        }
+
+        private void OnTapStart(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
@@ -28,17 +32,12 @@ namespace Game.Module.Input
             }
         }
 
-        public void OnTap(InputAction.CallbackContext context)
+        private void OnTap(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
                 Publish<TapMessage>(new TapMessage());
             }
-        }
-
-        public void OnGameOver(BirdDeathMessage message)
-        {
-            InputActionsManager.Character.Disable();
         }
     }
 }

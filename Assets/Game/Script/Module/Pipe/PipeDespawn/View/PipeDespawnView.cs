@@ -12,7 +12,7 @@ namespace Game.Module.Pipe
         {
             _onDespawnPipe = onDespawnPipe;
         }
-        void OnTriggerEnter2D(Collider2D other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
             _onDespawnPipe?.Invoke(other.transform);
         }

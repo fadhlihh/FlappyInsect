@@ -2,16 +2,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 using Game.Base.MVC;
-
 using Game.Module.HighScore;
 using Game.Utilty;
-using System.Collections;
 
 namespace Game.Module.Menu
 {
     public class MenuController : GameObjectController<MenuController, MenuModel, IMenuModel, MenuView>
     {
-        HighScoreCounterController _highScoreCounter;
+        private HighScoreCounterController _highScoreCounter;
 
         public override void SetView(MenuView view)
         {
@@ -25,12 +23,12 @@ namespace Game.Module.Menu
             _model.SetHighScore(message.HighScore);
         }
 
-        public void OnPlay()
+        private void OnPlay()
         {
             SceneManager.LoadScene(GameScene.GamePlay, LoadSceneMode.Additive);
         }
 
-        public void OnExit()
+        private void OnExit()
         {
             Application.Quit();
         }
