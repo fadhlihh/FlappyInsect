@@ -13,7 +13,7 @@ Layer: Global/Persistent.<br/>
 High Score Counter module is used to calculate player's high score in the game. High Score is a module that can be accessed from all scenes to display the player's high score, so this module is in the persistent layer. In this game, the high score data is saved into the save data, so this module is also responsible for saving and loading the high score data to/from the save data.<br/>
 
 Injected Controller:
-- ```SaveDataController```, ```HighScoreCounterController``` use API in ```SaveDataController``` to save and load high score data.
+- ```SaveDataController```, ```HighScoreCounterController``` use ```Save(int highScore)``` and ```Load()``` API in ```SaveDataController``` to save and load high score data.
 
 Published Message:
 - ```UpdateHighScoreMessage```, when there is a change in high score data, the high score counter module will notify other modules that have high score data to display. This message serves to adjust the high score data in other modules..
@@ -39,7 +39,7 @@ Scene: Main Menu.<br/>
 Menu module is used to display player's high score,  play button, and exit game button. In addition, this module also handles the event action of the play button and the game exit button.<br/>
 
 Injected Controller: 
-- ```HighScoreCounterController```, this module will use ```HighScoreDataController``` API to initialize high score data in ```MenuModel```.
+- ```HighScoreCounterController```, this module will use ```HighScore``` data from ```HighScoreDataController``` to initialize high score data in ```MenuModel```.
 
 Subscribed Message: 
 - ```UpdateHighScoreMessage```, this module will subscribe this message to update high score when there is a change in high score data in ```HighScoreModel```.
