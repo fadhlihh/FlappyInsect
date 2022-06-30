@@ -39,10 +39,10 @@ Scene: Main Menu.<br/>
 Menu module is used to display player's high score,  play button, and exit game button. In addition, this module also handles the event action of the play button and the game exit button.<br/>
 
 Injected Controller: 
-- ```HighScoreCounterController```, This module will use ```HighScoreDataController``` API to initialize high score data in ```MenuModel```.
+- ```HighScoreCounterController```, this module will use ```HighScoreDataController``` API to initialize high score data in ```MenuModel```.
 
 Subscribed Message: 
-- ```UpdateHighScoreMessage```, This module will subscribe this message to update high score when there is a change in high score data in ```HighScoreModel```.
+- ```UpdateHighScoreMessage```, this module will subscribe this message to update high score when there is a change in high score data in ```HighScoreModel```.
 
 MVC Component:
 - Controller, serve logic to initialize high score data to be show on the view, update ```HighScore``` data in ```MenuModel``` when receiving ```UpdateHighScoreModel```, set event for start game button and exit game button.
@@ -75,9 +75,9 @@ Subscribed Message:
 - ```TapStartMessage```, this message is used to notify the module that the player has started the game by using tap input. After this module receive the message, it will remove the "Tap To Start" pop up.
 
 MVC Component:
-- Controller,.
-- Model,.
-- View,.
+- Controller, serve logic to set ```IsPlaying``` data to true when receiving ```TapStartMessage```.
+- Model, serve ```IsPlaying``` data.
+- View, hide "tap to play" pop up when ```IsPlaying``` data is true.
 
 ### Pipe
 #### Pipe Spawn
@@ -91,9 +91,9 @@ Subscribed Message:
 - ```BirdDeathMessage```, this message will notify the player that the game is over. After this module receive the message, this module will stop spawning pipe object.
 
 MVC Component:
-- Controller,.
-- Model,.
-- View,.
+- Controller, serve logic to spawn pipe prefab and set spawn position. this component also set ```IsPlaying``` data to true when receiving ```TapStartMessage```, and set ```IsPlaying``` data to false when receiving ```BirdDeathMessage```.
+- Model, serve data ```IsPlaying```, serve data to spawn pipe prefab, including ```SpawnPoint```, ```SpawnRate```, ```SpawnGap```, etc.
+- View, invoke spawn pipe logic callback when ```IsPlaying``` data is true.
 
 #### Pipe Scroll
 Layer: Temporary.<br/>
@@ -106,19 +106,19 @@ Subscribed Message:
 - ```BirdDeathMessage```, this message will notify the player that the game is over. After this module receive the message, this module will stop scrolling pipe object.
 
 MVC Component:
-- Controller,.
-- Model,.
-- View,.
+- Controller, serve logic to move pipe position to the left by moving ```Position``` data. this component also set ```IsPlaying``` data to true when receiving ```TapStartMessage```, and set ```IsPlaying``` data to false when receiving ```BirdDeathMessage```.
+- Model, serve data ```IsPlaying```, serve data to move pipe position, including ```Position``` and ```ScrollSpeed```.
+- View, set the position according to ```Position``` data on the model.
 
 #### Pipe Despawn
 Layer: Temporary.<br/>
 Scene: Gameplay.<br/>
 
-Pipe despawn module is used to detect collisions between the pipe objects and the dispawner object. if any pipe enter the despawner object's trigger, the pipe will be destroyed. this is done to reduce the number of pipes in the video game.<br/>
+Pipe despawn module is used to detect if pipe objects enter dispawner's trigger. If any pipe enter the despawner's trigger, the pipe will be destroyed. this is done to reduce the number of pipes in the video game.<br/>
 
 MVC Component:
-- Controller,.
-- View,.
+- Controller, serve logic to destroy pipe object when enter despawner's trigger.
+- View, check if pipe object enter despawner's trigger, invoke destroy pipe logic if pipe object enter despawner's trigger.
 
 ### Bird
 #### Bird Movement
@@ -132,8 +132,8 @@ Subscribed Message:
 - ```TapMessage```, this message is used to notify the module that player has pressed tap input while playing the game. After this module receive the message, this module will apply force vertically to referenced bird.
 
 MVC Component:
-- Controller,.
-- Model,.
+- Controller, serve logic to apply gravity when reveiving ```TapStartMessage```, and apply force to the referenced bird when receiving ```TapMessage```.
+- Model, serve ```Force``` and ```GravityScale``` data.
 
 #### Bird Death
 Layer: Temporary.<br/>
@@ -149,8 +149,8 @@ Published Message:
 - ```BirdDeathMessage```, notify other module that the game is over.
 
 MVC Component:
-- Controller,.
-- View,.
+- Controller, serve logic to check high score and publish ```BirdDeathMessage``` when bird object collide with ground object or pipe object.
+- View, check collision between bird object and ground object or pipe object, invoke bird death logic if there is a collision between bird object and ground object or pipe object.
 
 #### Bird Add Score
 Layer: Temporary.<br/>
@@ -162,8 +162,8 @@ Published Message:
 - ```BirdAddScoreMessage```, notify other module that the bird made it through the pipe.
 
 MVC Component:
-- Controller,.
-- View,.
+- Controller, serve logic to publish ```BirdAddScoreMessage``` when bird object enter pipe hole's trigger.
+- View, check if bird object enter pipe hole's trigger, invoke add score logic if bird object enter pipe hole's trigger.
 
 ### Score
 #### Score Counter
@@ -177,9 +177,9 @@ Subscribed Message:
 - ```BirdAddscoreMessage```, this message is used to notify the module that the bird made it through the pipe. After this module receive the message, this module will add score by one.
 
 MVC Component:
-- Controller,.
-- Model,.
-- View,.
+- Controller, serve logic to show text when receiving ```TapStartMessage```, and add score logic when receiving ```BirdAddScoreMessage```.
+- Model, serve ```Score``` data.
+- View, show ```Score``` data from model.
 
 #### Add Score Audio
 Layer: Temporary.<br/>
@@ -191,7 +191,7 @@ Subscribed Message:
 - ```BirdAddscoreMessage```, this message is used to notify the module that the bird made it through the pipe. After this module receive the message, this module will add score sound effect.
 
 MVC Component:
-- Controller,.
+- Controller, serve logic to play add score audio sound effect when receiving ```BirdAddScoreMessage```.
 
 ### Game Over
 #### Game Over Pop Up
@@ -205,9 +205,9 @@ Subscribed Message:
 - ```UpdateHighScoreMessage```, this module will subscribe this message to update high score when there is a change in high score data in ```HighScoreModel```.
 
 MVC Component:
-- Controller,.
-- Model,.
-- View,.
+- Controller, serve logic to set ```Score``` $ ```HighScore``` data from model according to data in ```BirdDeathMessage``` and show game over pop up when receiving ```BirdDeathMessage```. this component also serve logic to handle click events from restart game button and main menu button.
+- Model, serve ```Score``` and ```HighScore``` data.
+- View, show game over pop up, ```Score``` and ```HighScore``` data from model.
 
 
 #### Game Over Audio
@@ -220,4 +220,4 @@ Subscribed Message:
 - ```BirdDeathMessage```, this message is used to notify the module that the game is over. After this module receive the message, this module will play game over sound effects.
 
 MVC Component:
-- Controller,.
+- Controller, serve logic to play game over audio sound effect when receiving ```BirdDeathMessage```.
