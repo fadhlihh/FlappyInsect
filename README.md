@@ -205,7 +205,7 @@ Subscribed Message:
 - ```UpdateHighScoreMessage```, this module will subscribe this message to update high score when there is a change in high score data in ```HighScoreModel```.
 
 MVC Component:
-- Controller, serve logic to set ```Score``` $ ```HighScore``` data from model according to data in ```BirdDeathMessage``` and show game over pop up when receiving ```BirdDeathMessage```. this component also serve logic to handle click events from restart game button and main menu button.
+- Controller, serve logic to set ```Score``` and ```HighScore``` data from model according to data in ```BirdDeathMessage``` and show game over pop up when receiving ```BirdDeathMessage```. this component also serve logic to handle click events from restart game button and main menu button.
 - Model, serve ```Score``` and ```HighScore``` data.
 - View, show game over pop up, ```Score``` and ```HighScore``` data from model.
 
