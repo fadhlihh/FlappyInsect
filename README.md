@@ -6,7 +6,40 @@ There are two scenes in this flappy bird game, including:
 - Main Menu: Scene that displays the highscore, play game button, and game exit button.
 - Gameplay: Scene thar displays the gameplay process of the flappy bird game.
 
-## Modules
+To give an idea about the scene flow in this game, you can see sceneflow diagram below.
+
+![FlappyBird - Scene Flow Diagram drawio](https://user-images.githubusercontent.com/43397593/177526548-a36c89ae-2aa4-43ea-8c52-c09beef09aaf.png)
+
+## Architecture Layer Design
+There are four layers in this game including: Framework Layer, Global / Persistence Layer, and Scene / Temporary Layer. Each layer has access restrictions on other layers. To be able to explain the layers and their access restrictions, you can see the architecture layer diagram below.
+
+## Module Communication
+The modules in this game uses two methods to communicate with each other. The communication methods between modules used in this video game are Dependency Injection(DI) and Publish - Subscribe.
+
+### Dependency Injection
+To explain the dependencies between modules in this game you can see the dependency diagram below.
+
+![FlappyBird - Dependency Diagram-All drawio](https://user-images.githubusercontent.com/43397593/177510004-a91698cb-c7f6-411c-9acc-a7ba02575b71.png)
+
+### Publish - Subscribe
+To explain all Publish - Subscribe process in video game you can see the signal diagram below.
+
+![FlappyBird - Signal Diagram-StartPlay](https://user-images.githubusercontent.com/43397593/177519286-eba8408f-a097-4992-a1ad-d40212d0dd0a.png)
+
+![FlappyBird - Signal Diagram-MoveBird](https://user-images.githubusercontent.com/43397593/177519389-2e04851b-1c34-4103-9d21-3bce073d4bee.png)
+
+![FlappyBird - Signal Diagram-AddScore](https://user-images.githubusercontent.com/43397593/177519417-98685dc9-36d3-4d80-9bbe-6813ac3a8030.png)
+
+![FlappyBird - Signal Diagram-GameOver](https://user-images.githubusercontent.com/43397593/177521427-ea26f48e-202b-48a3-b722-27ba034ac589.png)
+
+![FlappyBird - Signal Diagram-UpdateScore](https://user-images.githubusercontent.com/43397593/177521527-3ecccbd8-d51a-4911-9a9f-469a8f5c146f.png)
+
+![FlappyBird - Signal Diagram-UpdateHighScore](https://user-images.githubusercontent.com/43397593/177521535-e7746397-685f-45e9-9c04-18c82565d06b.png)
+
+## Game Process Flow
+To explain overall game process you can see flowchart diagram below.
+
+## Module List
 ### High Score
 Responsibility:
 - Check high score.
