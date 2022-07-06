@@ -14,10 +14,11 @@ Responsibility:
 - Load high score.
 
 Input:
-
+- Score. 
+- High Score from Save Data Module.
 
 Output:
-
+- High Score data.
 
 MVC Component:
 - Controller.
@@ -29,10 +30,11 @@ Responsibility:
 - Load data.
 
 Input:
-
+- High Score data from Game Save Data (PlayerPref).
+- High Score data from High Score module.
 
 Output:
-
+- High Score data.
 
 MVC Component:
 - Controller.
@@ -43,11 +45,11 @@ Responsibility:
 - Show menu.
 - Handle menu button click event.
 
-Input:
-
+Input: 
+- High Score data.
 
 Output:
-
+- High Score text.
 
 MVC Component:
 - Controller.
@@ -59,23 +61,24 @@ Responsibility:
 - Handle tap input event to start playing and move bird.
 
 Input:
-
+- User Tap input.
 
 Output:
-
+- Start Play Message.
+- Move Bird Message.
 
 MVC Component:
 - Controller.
 
 ### Play Game
 Responsibility:
-- Hide tap to start pop up when start playing.
+- Hide "Tap to Start" pop up when start playing.
 
 Input:
-
+- Start Play Message.
 
 Output:
-
+- Disactive "Tap to Start" pop up.
 
 MVC Component:
 - Controller.
@@ -89,10 +92,13 @@ Responsibility:
 - Despawn pipe.
 
 Input:
-
+- Start Play Message.
+- Game Over Message.
 
 Output:
-
+- Pipe Object
+- Scrolling Pipe Container
+- Pipe Destroyed
 
 MVC Component:
 - Controller.
@@ -105,10 +111,10 @@ Responsibility:
 - Move bird when player playing and tap.
 
 Input:
-
+- Move Bird Message.
 
 Output:
-
+- Bird Move Vertically.
 
 MVC Component:
 - Controller.
@@ -120,10 +126,11 @@ Responsibility:
 - Check if the bird passes the pipe. Publish message if the bird passes the pipe.
 
 Input:
-
+- Collided or Triggered Collider.
 
 Output:
-
+- Game Over Message.
+- Add Score Message.
 
 MVC Component:
 - Controller.
@@ -134,10 +141,10 @@ Responsibility:
 - Add score when the bird passes the pipe.
 
 Input:
-
+- Add Score Message.
 
 Output:
-
+- Added Score data.
 
 MVC Component:
 - Controller.
@@ -153,10 +160,12 @@ Responsibilty:
 - Handle main menu button click.
 
 Input:
-
+- Game Over Message.
 
 Output:
-
+- Game Over Pop Up.
+- Displayed High Score data.
+- Displayed Score data.
 
 MVC Component:
 - Controller.
@@ -169,10 +178,12 @@ Responsibility:
 - Play audio when game over.
 
 Input:
-
+- Add Score Message.
+- Game Over Message.
 
 Output:
-
+- Add Score Audio.
+- Game Over Audio.
 
 MVC Component:
 - Controller
