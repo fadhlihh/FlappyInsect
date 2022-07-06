@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7263308888229198889}
   - component: {fileID: 1661467150450505930}
-  - component: {fileID: 5948781456261644274}
+  - component: {fileID: 1954777240483769281}
   m_Layer: 0
   m_Name: CollisionDetector
   m_TagString: Untagged
@@ -49,7 +49,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.14
---- !u!114 &5948781456261644274
+--- !u!114 &1954777240483769281
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,6 +58,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5180499983247459847}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b42fa6bdd991e3344bacca824717f2e1, type: 3}
+  m_Script: {fileID: 11500000, guid: c0c55d1e849b0394caabafb735748884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

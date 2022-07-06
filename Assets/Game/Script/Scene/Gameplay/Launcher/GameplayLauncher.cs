@@ -9,40 +9,35 @@ using Game.Utilty;
 
 using Game.Module.Input;
 using Game.Module.PlayGame;
-using Game.Module.Pipe;
+using Game.Module.PipeContainer;
 using Game.Module.Bird;
 using Game.Module.Score;
 using Game.Module.GameOver;
+using Game.Module.Audio;
 
 namespace Game.Scene.Gameplay
 {
     public class GameplayLauncher : SceneLauncher<GameplayLauncher, GameplayView>
     {
-        [SerializeField]
-        private GameplayView _gameplayView;
-
         private PlayGameController _playGame;
-        private PipeSpawnController _pipeSpawn;
-        private PipeScrollController _pipeScroll;
-        private PipeDespawnController _pipeDespawn;
+        private PipeContainerController _pipeContainer;
         private BirdMovementController _birdMovement;
-        private BirdAddScoreController _birdAddScore;
-        private BirdDeathController _birdDeath;
-        private ScoreCounterController _scoreCounter;
-        private GameOverPopUpController _gameOverPopUp;
+        private BirdCollisionController _birdCollision;
+        private ScoreController _scoreCounter;
+        private GameOverController _gameOverPopUp;
+
+        public override string SceneName { get { return GameScene.GamePlay; } }
 
         protected override IConnector[] GetSceneConnectors()
         {
             return new IConnector[] {
                 new TapInputConnector(),
                 new PlayGameConnector(),
-                new PipeSpawnConnector(),
-                new PipeScrollConnector(),
+                new PipeContainerConnector(),
                 new BirdMovementConnector(),
-                new ScoreCounterConnector(),
-                new AddScoreAudiConnector(),
-                new GameOverPopUpConnector(),
-                new GameOverAudioConnecter()
+                new ScoreConnector(),
+                new GameOverConnector(),
+                new GameplayAudioConnector()
             };
         }
 
@@ -51,40 +46,23 @@ namespace Game.Scene.Gameplay
             return new IController[] {
                 new TapInputController(),
                 new PlayGameController(),
-                new PipeSpawnController(),
-                new PipeScrollController(),
-                new PipeDespawnController(),
-                new BirdDeathController(),
-                new BirdMovementController(),
-                new BirdAddScoreController(),
-                new ScoreCounterController(),
-                new AddScoreAudioController(),
-                new GameOverPopUpController(),
-                new GameOverAudioController()
+                new PipeContainerController(),
+                new BirdController(),
+                new ScoreController(),
+                new GameOverController(),
+                new GameplayAudioController()
         };
-        }
-
-        protected override string GetSceneName()
-        {
-            return GameScene.GamePlay;
-        }
-
-        protected override GameplayView GetSceneView()
-        {
-            return _gameplayView;
         }
 
         protected override IEnumerator InitSceneObject()
         {
             _playGame.SetView(_view.PlayGameView);
-            _pipeSpawn.SetView(_view.PipeSpawnView);
-            _pipeScroll.SetView(_view.PipeScrollView);
-            _pipeDespawn.SetView(_view.PipeDespawnView);
-            _birdMovement.GetBirdPhysics(_view.BirdPhysics);
-            _birdAddScore.SetView(_view.BirdAddScoreView);
-            _birdDeath.SetView(_view.BirdDeathView);
+            _pipeContainer.SetView(_view.PipeContainerView);
+            _pipeContainer.SetInitPosition(_view.MainCamera);
+            _birdMovement.SetBirdPhysics(_view.BirdPhysics);
+            _birdCollision.SetView(_view.BirdCollisionView);
             _scoreCounter.SetView(_view.ScoreCounterView);
-            _gameOverPopUp.SetView(_view.GameOverPopUpView);
+            _gameOverPopUp.SetView(_view.GameOverView);
             yield return null;
         }
 

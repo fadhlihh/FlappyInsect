@@ -12,10 +12,9 @@ namespace Game.Scene.MainMenu
 {
     public class MainMenuLauncher : SceneLauncher<MainMenuLauncher, MainMenuView>
     {
-        [SerializeField]
-        private MainMenuView _mainMenuView;
-
         private MenuController _menu;
+
+        public override string SceneName { get { return GameScene.MainMenu; } }
 
         protected override IConnector[] GetSceneConnectors()
         {
@@ -29,19 +28,9 @@ namespace Game.Scene.MainMenu
             };
         }
 
-        protected override string GetSceneName()
-        {
-            return GameScene.MainMenu;
-        }
-
-        protected override MainMenuView GetSceneView()
-        {
-            return _mainMenuView;
-        }
-
         protected override IEnumerator InitSceneObject()
         {
-            _menu.SetView(_mainMenuView.MenuView);
+            _menu.SetView(_view.MenuView);
             yield return null;
         }
 

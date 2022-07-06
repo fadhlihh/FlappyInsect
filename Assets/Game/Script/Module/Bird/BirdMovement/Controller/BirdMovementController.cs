@@ -9,18 +9,18 @@ namespace Game.Module.Bird
     {
         private Rigidbody2D _birdPhysics;
 
-        public void OnTapStart(TapStartMessage message)
+        public void OnStartPlay(StartPlayMessage message)
         {
             _birdPhysics.gravityScale = _model.GravityScale;
         }
 
-        public void OnMoveBird(TapMessage message)
+        public void OnMoveBird(MoveBirdMessage message)
         {
             Vector2 force = Vector2.up * _model.Force * Time.fixedDeltaTime;
             _birdPhysics.AddForce(force, ForceMode2D.Force);
         }
 
-        public void GetBirdPhysics(Rigidbody2D birdPhysics)
+        public void SetBirdPhysics(Rigidbody2D birdPhysics)
         {
             _birdPhysics = birdPhysics;
         }

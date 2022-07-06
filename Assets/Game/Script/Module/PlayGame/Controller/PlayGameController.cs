@@ -5,7 +5,7 @@ namespace Game.Module.PlayGame
 {
     public class PlayGameController : GameObjectController<PlayGameController, PlayGameModel, IPlayGameModel, PlayGameView>
     {
-        public void OnTapStart(TapStartMessage message)
+        public void OnStartPlay(StartPlayMessage message)
         {
             _model.SetIsPlaying(true);
         }

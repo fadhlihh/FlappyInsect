@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEngine;
 
 using Agate.MVC.Base;
 using Agate.MVC.Core;
@@ -10,21 +11,22 @@ namespace Game.Boot
 {
     public class GameLauncher : BaseMain<GameLauncher>, IMain
     {
-        protected override IConnector[] GetMainConnectors()
+        protected override IConnector[] GetConnectors()
         {
             return new IConnector[]{
+                new HighScoreConnector()
             };
         }
 
-        protected override IController[] GetSystemDependencies()
+        protected override IController[] GetDependencies()
         {
             return new IController[] {
                 new SaveDataController(),
-                new HighScoreCounterController()
+                new HighScoreController()
             };
         }
 
-        protected override IEnumerator InitSystem()
+        protected override IEnumerator StartInit()
         {
             yield return null;
         }

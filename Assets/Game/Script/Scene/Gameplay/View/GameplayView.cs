@@ -2,7 +2,7 @@ using UnityEngine;
 
 using Game.Base.MVC;
 using Game.Module.PlayGame;
-using Game.Module.Pipe;
+using Game.Module.PipeContainer;
 using Game.Module.Bird;
 using Game.Module.Score;
 using Game.Module.GameOver;
@@ -14,20 +14,16 @@ namespace Game.Scene.Gameplay
         [SerializeField]
         public PlayGameView PlayGameView;
         [SerializeField]
-        public PipeSpawnView PipeSpawnView;
-        [SerializeField]
-        public PipeScrollView PipeScrollView;
-        [SerializeField]
-        public PipeDespawnView PipeDespawnView;
+        public PipeContainerView PipeContainerView;
         [SerializeField]
         public Rigidbody2D BirdPhysics;
         [SerializeField]
-        public BirdAddScoreView BirdAddScoreView;
+        public BirdCollisionView BirdCollisionView;
         [SerializeField]
-        public BirdDeathView BirdDeathView;
+        public ScoreView ScoreCounterView;
         [SerializeField]
-        public ScoreCounterView ScoreCounterView;
+        public GameOverView GameOverView;
         [SerializeField]
-        public GameOverPopUpView GameOverPopUpView;
+        public Camera MainCamera;
     }
 }

@@ -17,7 +17,7 @@ namespace Game.Module.Input
             return base.Initialize();
         }
 
-        public void OnGameOver(BirdDeathMessage message)
+        public void OnGameOver(GameOverMessage message)
         {
             InputActionsManager.Character.Disable();
         }
@@ -28,7 +28,7 @@ namespace Game.Module.Input
             {
                 InputActionsManager.Character.Enable();
                 InputActionsManager.UI.Disable();
-                Publish<TapStartMessage>(new TapStartMessage());
+                Publish<StartPlayMessage>(new StartPlayMessage());
             }
         }
 
@@ -36,7 +36,7 @@ namespace Game.Module.Input
         {
             if (context.performed)
             {
-                Publish<TapMessage>(new TapMessage());
+                Publish<MoveBirdMessage>(new MoveBirdMessage());
             }
         }
     }

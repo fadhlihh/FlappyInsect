@@ -1,3 +1,5 @@
+using UnityEngine;
+
 using Agate.MVC.Base;
 
 namespace Game.Boot
@@ -8,14 +10,13 @@ namespace Game.Boot
         // private GameObject _loadingScreen;
         // protected override void ShowLoadingView()
         // {
+        //     Debug.Log("Show Loading");
         //     _loadingScreen = Object.Instantiate(Resources.Load("Prefabs/Loading/LoadingScreen")) as GameObject;
         // }
         // protected override void HideLoadingView()
         // {
-        //     if (_loadingScreen)
-        //     {
-        //         Object.Destroy(_loadingScreen);
-        //     }
+        //     Debug.Log("Hide Loading");
+        //     Object.Destroy(_loadingScreen);
         // }
     }
 }

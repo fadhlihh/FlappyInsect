@@ -1,17 +1,24 @@
-using Agate.MVC.Core;
-
 using Game.Base.MVC;
+using Game.Module.Input;
+using Game.Module.Bird;
 
 namespace Game.Module.Score
 {
-    public class ScoreController : GameGroupController<ScoreController>
+    public class ScoreController : GameObjectController<ScoreController, ScoreModel, IScoreModel, ScoreView>
     {
-        protected override IController[] GetSubControllers()
+        public void OnStartPlay(StartPlayMessage message)
         {
-            return new IController[]{
-                new ScoreCounterController(),
-                new AddScoreAudioController()
-            };
+            _view.ScoreText.gameObject.SetActive(true);
+        }
+
+        public void OnAddScore(AddScoreMessage message)
+        {
+            _model.AddScore();
+        }
+
+        public void OnGameOver(GameOverMessage message)
+        {
+            Publish<UpdateScoreMessage>(new UpdateScoreMessage(_model.Score));
         }
     }
 }

@@ -8,14 +8,14 @@ namespace Game.Module.Bird
         private BirdMovementController _birdMovement;
         protected override void Connect()
         {
-            Subscribe<TapStartMessage>(_birdMovement.OnTapStart);
-            Subscribe<TapMessage>(_birdMovement.OnMoveBird);
+            Subscribe<StartPlayMessage>(_birdMovement.OnStartPlay);
+            Subscribe<MoveBirdMessage>(_birdMovement.OnMoveBird);
         }
 
         protected override void Disconnect()
         {
-            Unsubscribe<TapStartMessage>(_birdMovement.OnTapStart);
-            Unsubscribe<TapMessage>(_birdMovement.OnMoveBird);
+            Unsubscribe<StartPlayMessage>(_birdMovement.OnStartPlay);
+            Unsubscribe<MoveBirdMessage>(_birdMovement.OnMoveBird);
         }
     }
 }

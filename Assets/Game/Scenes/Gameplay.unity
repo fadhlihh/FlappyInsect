@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5276292957706519526, guid: 410c0782350543342a728962449875a4, type: 3}
+      propertyPath: MainCamera
+      value: 
+      objectReference: {fileID: 1190723183}
     - target: {fileID: 7633194731346029868, guid: 410c0782350543342a728962449875a4, type: 3}
       propertyPath: m_Name
       value: GameplayView
@@ -319,7 +323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f868985180b1c4cb823d6307dfb308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameplayView: {fileID: 114558034}
+  _view: {fileID: 114558034}
 --- !u!1 &1661809761
 GameObject:
   m_ObjectHideFlags: 0

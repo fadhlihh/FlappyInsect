@@ -9,8 +9,7 @@ namespace Game.Module.Bird
         {
             return new IController[]{
                 new BirdMovementController(),
-                new BirdAddScoreController(),
-                new BirdDeathController()
+                new BirdCollisionController()
             };
         }
     }
