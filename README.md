@@ -8,7 +8,7 @@ There are two scenes in this flappy bird game, including:
 
 To give an idea about the scene flow in this game, you can see sceneflow diagram below.
 
-![FlappyBird - Scene Flow Diagram drawio](https://user-images.githubusercontent.com/43397593/177526548-a36c89ae-2aa4-43ea-8c52-c09beef09aaf.png)
+![FlappyBird - Scene Flow Diagram](https://user-images.githubusercontent.com/43397593/177526548-a36c89ae-2aa4-43ea-8c52-c09beef09aaf.png)
 
 ## Architecture Layer Design
 There are four layers in this game including: Framework Layer, Global / Persistence Layer, and Scene / Temporary Layer. Each layer has access restrictions on other layers. To be able to explain the layers and their access restrictions, you can see the architecture layer diagram below.
@@ -19,7 +19,7 @@ The modules in this game uses two methods to communicate with each other. The co
 ### Dependency Injection
 To explain the dependencies between modules in this game you can see the dependency diagram below.
 
-![FlappyBird - Dependency Diagram-All drawio](https://user-images.githubusercontent.com/43397593/177510004-a91698cb-c7f6-411c-9acc-a7ba02575b71.png)
+![FlappyBird - Dependency Diagram-All](https://user-images.githubusercontent.com/43397593/177510004-a91698cb-c7f6-411c-9acc-a7ba02575b71.png)
 
 ### Publish - Subscribe
 To explain all Publish - Subscribe process in video game you can see the signal diagram below.
@@ -38,6 +38,16 @@ To explain all Publish - Subscribe process in video game you can see the signal 
 
 ## Game Process Flow
 To explain overall game process you can see flowchart diagram below.
+
+![FlappyBird - Flowchart-MainMenu](https://user-images.githubusercontent.com/43397593/177670285-1993ba41-2727-4322-b4ba-b128df72a22e.png)
+
+![FlappyBird - Flowchart-Gameplay](https://user-images.githubusercontent.com/43397593/177670317-c499d2ef-3ddc-445c-a1b7-81fe7276cb05.png)
+
+![FlappyBird - Flowchart-Pipe](https://user-images.githubusercontent.com/43397593/177670330-0fef6c42-c387-4545-accc-bb81766ea195.png)
+
+![FlappyBird - Flowchart-Bird](https://user-images.githubusercontent.com/43397593/177670350-d19c3f1e-7164-4fe3-90f3-4d8e4b1c5f94.png)
+
+![FlappyBird - Flowchart-GameOver](https://user-images.githubusercontent.com/43397593/177670365-28d3b51b-ca00-4195-b2ee-93f450ae37f0.png)
 
 ## Module List
 ### High Score
