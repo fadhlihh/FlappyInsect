@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-
 using Game.Base.MVC;
 
 namespace Game.Module.PipeContainer

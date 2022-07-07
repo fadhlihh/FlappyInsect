@@ -1,9 +1,6 @@
 using System.Collections;
-using UnityEngine;
-
 using Agate.MVC.Base;
 using Agate.MVC.Core;
-
 using Game.Boot;
 using Game.Utilty;
 using Game.Module.Menu;

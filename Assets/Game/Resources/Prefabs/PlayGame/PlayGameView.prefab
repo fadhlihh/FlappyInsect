@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7973759386577935631}
   - component: {fileID: 6568681776393617752}
   m_Layer: 5
-  m_Name: PlayGameInstruction
+  m_Name: TapToStartPopUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6463639625439997082}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -147,4 +147,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f308c16be996ca4fb4a7fae6ab792b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playInstruction: {fileID: 7973759386577935631}
+  _tapToStartPopUp: {fileID: 7973759386577935631}

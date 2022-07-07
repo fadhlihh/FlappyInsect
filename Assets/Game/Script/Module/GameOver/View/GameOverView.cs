@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
-
 using Game.Base.MVC;
 
 namespace Game.Module.GameOver

@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-
 using Game.Base.MVC;
 
 namespace Game.Module.SaveData
@@ -9,8 +8,8 @@ namespace Game.Module.SaveData
     {
         public override IEnumerator Initialize()
         {
+            yield return base.Initialize();
             Load();
-            return base.Initialize();
         }
 
         public void Save(int highScore)

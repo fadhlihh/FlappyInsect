@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine.InputSystem;
-
 using Game.Base.MVC;
 using Game.Module.Bird;
 
@@ -8,26 +7,26 @@ namespace Game.Module.Input
 {
     public class TapInputController : GameBaseController<TapInputController>
     {
-        private InputActionManager InputActionsManager = new InputActionManager();
+        private InputActionManager _inputActionsManager = new InputActionManager();
         public override IEnumerator Initialize()
         {
-            InputActionsManager.UI.Enable();
-            InputActionsManager.UI.TapStart.performed += OnTapStart;
-            InputActionsManager.Character.Tap.performed += OnTap;
+            _inputActionsManager.UI.Enable();
+            _inputActionsManager.UI.TapStart.performed += OnTapStart;
+            _inputActionsManager.Character.Tap.performed += OnTap;
             return base.Initialize();
         }
 
         public void OnGameOver(GameOverMessage message)
         {
-            InputActionsManager.Character.Disable();
+            _inputActionsManager.Character.Disable();
         }
 
         private void OnTapStart(InputAction.CallbackContext context)
         {
             if (context.performed)
             {
-                InputActionsManager.Character.Enable();
-                InputActionsManager.UI.Disable();
+                _inputActionsManager.Character.Enable();
+                _inputActionsManager.UI.Disable();
                 Publish<StartPlayMessage>(new StartPlayMessage());
             }
         }

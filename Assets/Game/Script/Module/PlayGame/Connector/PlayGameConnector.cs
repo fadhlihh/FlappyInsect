@@ -5,15 +5,15 @@ namespace Game.Module.PlayGame
 {
     public class PlayGameConnector : GameConnector
     {
-        private PlayGameController _playGameController;
+        private PlayGameController _playGame;
         protected override void Connect()
         {
-            Subscribe<StartPlayMessage>(_playGameController.OnStartPlay);
+            Subscribe<StartPlayMessage>(_playGame.OnStartPlay);
         }
 
         protected override void Disconnect()
         {
-            Unsubscribe<StartPlayMessage>(_playGameController.OnStartPlay);
+            Unsubscribe<StartPlayMessage>(_playGame.OnStartPlay);
         }
     }
 }

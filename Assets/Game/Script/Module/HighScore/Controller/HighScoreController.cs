@@ -1,6 +1,4 @@
-using UnityEngine;
 using System.Collections;
-
 using Game.Base.MVC;
 using Game.Module.SaveData;
 using Game.Module.Score;

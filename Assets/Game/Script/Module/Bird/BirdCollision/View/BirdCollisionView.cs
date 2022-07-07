@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Events;
-
 using Game.Base.MVC;
 
 namespace Game.Module.Bird

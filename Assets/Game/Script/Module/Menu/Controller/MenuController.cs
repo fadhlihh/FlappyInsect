@@ -1,11 +1,9 @@
+using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
 using Game.Base.MVC;
 using Game.Boot;
 using Game.Module.HighScore;
 using Game.Utilty;
-using System.Collections;
 
 namespace Game.Module.Menu
 {

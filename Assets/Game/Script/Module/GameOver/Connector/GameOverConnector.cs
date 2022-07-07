@@ -7,20 +7,20 @@ namespace Game.Module.GameOver
 {
     public class GameOverConnector : GameConnector
     {
-        private GameOverController _gameOverPopUp;
+        private GameOverController _gameOver;
 
         protected override void Connect()
         {
-            Subscribe<GameOverMessage>(_gameOverPopUp.OnGameOver);
-            Subscribe<UpdateHighScoreMessage>(_gameOverPopUp.OnUpdateHighScore);
-            Subscribe<UpdateScoreMessage>(_gameOverPopUp.OnUpdateScore);
+            Subscribe<GameOverMessage>(_gameOver.OnGameOver);
+            Subscribe<UpdateHighScoreMessage>(_gameOver.OnUpdateHighScore);
+            Subscribe<UpdateScoreMessage>(_gameOver.OnUpdateScore);
         }
 
         protected override void Disconnect()
         {
-            Unsubscribe<GameOverMessage>(_gameOverPopUp.OnGameOver);
-            Unsubscribe<UpdateHighScoreMessage>(_gameOverPopUp.OnUpdateHighScore);
-            Unsubscribe<UpdateScoreMessage>(_gameOverPopUp.OnUpdateScore);
+            Unsubscribe<GameOverMessage>(_gameOver.OnGameOver);
+            Unsubscribe<UpdateHighScoreMessage>(_gameOver.OnUpdateHighScore);
+            Unsubscribe<UpdateScoreMessage>(_gameOver.OnUpdateScore);
         }
     }
 }

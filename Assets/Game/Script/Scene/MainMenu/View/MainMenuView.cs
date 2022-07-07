@@ -1,5 +1,4 @@
 using UnityEngine;
-
 using Game.Base.MVC;
 using Game.Module.Menu;
 

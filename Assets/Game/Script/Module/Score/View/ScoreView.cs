@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-
 using Game.Base.MVC;
 
 namespace Game.Module.Score

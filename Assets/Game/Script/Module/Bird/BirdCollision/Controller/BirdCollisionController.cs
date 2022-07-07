@@ -1,9 +1,5 @@
 using UnityEngine;
-
 using Game.Base.MVC;
-using Game.Module.HighScore;
-using Game.Module.Score;
-using Game.Module.Bird;
 
 namespace Game.Module.Bird
 {

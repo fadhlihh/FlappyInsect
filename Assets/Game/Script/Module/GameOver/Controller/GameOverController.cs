@@ -1,11 +1,10 @@
+using System.Collections;
 using Game.Base.MVC;
 using Game.Boot;
 using Game.Utilty;
-
 using Game.Module.Bird;
 using Game.Module.HighScore;
 using Game.Module.Score;
-using System.Collections;
 
 namespace Game.Module.GameOver
 {

@@ -1,12 +1,8 @@
 using System.Collections;
-using UnityEngine;
-
 using Agate.MVC.Base;
 using Agate.MVC.Core;
-
 using Game.Boot;
 using Game.Utilty;
-
 using Game.Module.Input;
 using Game.Module.PlayGame;
 using Game.Module.PipeContainer;
@@ -25,6 +21,7 @@ namespace Game.Scene.Gameplay
         private BirdCollisionController _birdCollision;
         private ScoreController _scoreCounter;
         private GameOverController _gameOverPopUp;
+        private GameplayAudioController _gameplayAudio;
 
         public override string SceneName { get { return GameScene.GamePlay; } }
 
@@ -56,13 +53,25 @@ namespace Game.Scene.Gameplay
 
         protected override IEnumerator InitSceneObject()
         {
+            #region SetModuleView
             _playGame.SetView(_view.PlayGameView);
             _pipeContainer.SetView(_view.PipeContainerView);
-            _pipeContainer.SetInitPosition(_view.MainCamera);
-            _birdMovement.SetBirdPhysics(_view.BirdPhysics);
             _birdCollision.SetView(_view.BirdCollisionView);
             _scoreCounter.SetView(_view.ScoreCounterView);
             _gameOverPopUp.SetView(_view.GameOverView);
+            #endregion
+            #region SetInitPipePosition
+            _pipeContainer.SetInitPosition(_view.MainCamera);
+            #endregion
+            #region SetBirdPhysics
+            _birdMovement.SetBirdPhysics(_view.BirdPhysics);
+            #endregion
+            #region SetAudio
+            _gameplayAudio.SetBirdWingsSFX(_view.BirdWingsSFX);
+            _gameplayAudio.SetAddScoreSFX(_view.AddScoreSFX);
+            _gameplayAudio.SetBirdHitSFX(_view.BirdHitSFX);
+            _gameplayAudio.SetGameOverSFX(_view.GameOverSFX);
+            #endregion
             yield return null;
         }
 
