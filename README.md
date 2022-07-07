@@ -19,14 +19,14 @@ The modules in this game uses two methods to communicate with each other. The co
 ### Dependency Injection
 To explain the dependencies between modules in this game you can see the dependency diagram below.
 
-![FlappyBird - Dependency Diagram-All](https://user-images.githubusercontent.com/43397593/177510004-a91698cb-c7f6-411c-9acc-a7ba02575b71.png)
+![FlappyBird - Dependency Diagram-All](https://user-images.githubusercontent.com/43397593/177779672-2374e435-879c-4512-8482-69f0e6cbffbe.png)
 
 ### Publish - Subscribe
 To explain all Publish - Subscribe process in video game you can see the signal diagram below.
 
 ![FlappyBird - Signal Diagram-StartPlay](https://user-images.githubusercontent.com/43397593/177519286-eba8408f-a097-4992-a1ad-d40212d0dd0a.png)
 
-![FlappyBird - Signal Diagram-MoveBird](https://user-images.githubusercontent.com/43397593/177519389-2e04851b-1c34-4103-9d21-3bce073d4bee.png)
+![FlappyBird - Signal Diagram-MoveBird](https://user-images.githubusercontent.com/43397593/177778596-15332142-fd26-4a5e-b909-bb1f8a630f65.png)
 
 ![FlappyBird - Signal Diagram-AddScore](https://user-images.githubusercontent.com/43397593/177519417-98685dc9-36d3-4d80-9bbe-6813ac3a8030.png)
 
@@ -218,6 +218,7 @@ MVC Component:
 ### Gameplay Audio
 Responsibility:
 - Play audio when the bird passes the pipe.
+- Play audio when the bird move.
 - Play audio when game over.
 
 Input:
