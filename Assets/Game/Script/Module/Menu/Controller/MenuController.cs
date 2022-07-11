@@ -2,14 +2,14 @@ using System.Collections;
 using UnityEngine;
 using Game.Base.MVC;
 using Game.Boot;
-using Game.Module.HighScore;
+using Game.Module.HighScoreData;
 using Game.Utilty;
 
 namespace Game.Module.Menu
 {
     public class MenuController : GameObjectController<MenuController, MenuModel, IMenuModel, MenuView>
     {
-        private HighScoreController _highScore;
+        private HighScoreDataController _highScore;
 
         public override IEnumerator Finalize()
         {

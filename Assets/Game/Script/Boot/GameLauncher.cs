@@ -4,8 +4,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
 using Agate.MVC.Base;
 using Agate.MVC.Core;
-using Game.Module.HighScore;
-using Game.Module.SaveData;
+using Game.Module.HighScoreData;
 
 namespace Game.Boot
 {
@@ -14,15 +13,13 @@ namespace Game.Boot
         protected override IConnector[] GetConnectors()
         {
             return new IConnector[]{
-                new HighScoreConnector()
             };
         }
 
         protected override IController[] GetDependencies()
         {
             return new IController[] {
-                new SaveDataController(),
-                new HighScoreController()
+                new HighScoreDataController()
             };
         }
 

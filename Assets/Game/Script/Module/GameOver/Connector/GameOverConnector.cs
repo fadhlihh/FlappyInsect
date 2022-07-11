@@ -1,6 +1,6 @@
 using Game.Base.MVC;
 using Game.Module.Bird;
-using Game.Module.HighScore;
+using Game.Module.HighScoreData;
 using Game.Module.Score;
 
 namespace Game.Module.GameOver

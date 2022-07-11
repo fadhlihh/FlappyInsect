@@ -3,7 +3,7 @@ using Game.Base.MVC;
 using Game.Module.Input;
 using Game.Module.Bird;
 
-namespace Game.Module.Audio
+namespace Game.Module.GameplayAudio
 {
     public class GameplayAudioController : GameBaseController<GameplayAudioController>
     {

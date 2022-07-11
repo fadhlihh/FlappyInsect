@@ -9,7 +9,7 @@ using Game.Module.PipeContainer;
 using Game.Module.Bird;
 using Game.Module.Score;
 using Game.Module.GameOver;
-using Game.Module.Audio;
+using Game.Module.GameplayAudio;
 
 namespace Game.Scene.Gameplay
 {

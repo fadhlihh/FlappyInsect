@@ -20,7 +20,6 @@ namespace Game.Module.PipeContainer
 
         protected override void InitRenderModel(IPipeContainerModel model)
         {
-            transform.position = model.Position;
             if (model.IsPlaying)
             {
                 StartCoroutine(InvokeSpawn(model.SpawnRate));
@@ -32,7 +31,6 @@ namespace Game.Module.PipeContainer
             if (model.IsPlaying)
             {
                 StartCoroutine(InvokeSpawn(model.SpawnRate));
-                transform.position = model.Position;
             }
         }
 

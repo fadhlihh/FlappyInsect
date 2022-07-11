@@ -1,5 +1,5 @@
 using Game.Base.MVC;
-using Game.Module.HighScore;
+using Game.Module.HighScoreData;
 
 namespace Game.Module.Menu
 {

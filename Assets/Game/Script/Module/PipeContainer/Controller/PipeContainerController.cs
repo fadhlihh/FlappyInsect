@@ -14,6 +14,7 @@ namespace Game.Module.PipeContainer
             Vector3 worldPointDespawnPosition = mainCamera.ViewportToWorldPoint(_model.DespawnPosition);
             _model.SetDespawnPosition(worldPointDespawnPosition);
         }
+
         public void OnStartPlay(StartPlayMessage message)
         {
             _model.SetIsPlaying(true);
@@ -49,7 +50,9 @@ namespace Game.Module.PipeContainer
         {
             if (_model.Pipes.Count > 0)
             {
-                if (_model.Pipes.Peek().transform.position.x <= _model.DespawnPosition.x)
+                float frontPipePosition = _model.Pipes.Peek().transform.position.x;
+                float despawnPosition = _model.DespawnPosition.x;
+                if (frontPipePosition <= despawnPosition)
                 {
                     GameObject pipe = _model.GetPipe();
                     Object.Destroy(pipe);

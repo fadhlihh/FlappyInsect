@@ -1,4 +1,4 @@
-namespace Game.Module.HighScore
+namespace Game.Module.HighScoreData
 {
     public class UpdateHighScoreMessage
     {
