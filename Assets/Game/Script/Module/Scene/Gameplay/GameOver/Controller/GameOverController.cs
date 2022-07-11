@@ -10,15 +10,7 @@ namespace FlappyBird.Module.GameOver
 {
     public class GameOverController : GameObjectController<GameOverController, GameOverModel, IGameOverModel, GameOverView>
     {
-        private ScoreController _score;
         private HighScoreDataController _highScoreData;
-
-        public override IEnumerator Finalize()
-        {
-            yield return base.Finalize();
-            _model.SetScore(_score.Model.Score);
-            _model.SetHighScore(_highScoreData.Model.HighScore);
-        }
 
         public void OnGameOver(GameOverMessage message)
         {
@@ -26,14 +18,10 @@ namespace FlappyBird.Module.GameOver
             _view.ShowGameOverPopUp();
         }
 
-        public void OnUpdateHighScore(UpdateHighScoreMessage message)
-        {
-            _model.SetHighScore(message.HighScore);
-        }
-
-        public void OnUpdateScore(UpdateScoreMessage message)
+        public void OnShowCalcScore(ShowCalcScoreMessage message)
         {
             _model.SetScore(message.Score);
+            _model.SetHighScore(message.HighScore);
         }
 
         private void OnRestart()

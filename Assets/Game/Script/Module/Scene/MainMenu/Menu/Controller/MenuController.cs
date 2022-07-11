@@ -23,11 +23,6 @@ namespace FlappyBird.Module.Menu
             view.SetCallbacks(OnPlay, OnExit);
         }
 
-        public void OnUpdateHighScore(UpdateHighScoreMessage message)
-        {
-            _model.SetHighScore(message.HighScore);
-        }
-
         private void OnPlay()
         {
             SceneLoader.Instance.LoadScene(GameScene.GamePlay);

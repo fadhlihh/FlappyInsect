@@ -22,7 +22,7 @@ namespace FlappyBird.Module.Score
         public void OnGameOver(GameOverMessage message)
         {
             CheckHighScore();
-            Publish<UpdateScoreMessage>(new UpdateScoreMessage(_model.Score));
+            Publish<ShowCalcScoreMessage>(new ShowCalcScoreMessage(_model.Score, _highScoreData.Model.HighScore));
         }
 
         public void CheckHighScore()

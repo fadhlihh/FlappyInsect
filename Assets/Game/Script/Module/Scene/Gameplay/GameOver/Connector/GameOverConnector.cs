@@ -12,15 +12,13 @@ namespace FlappyBird.Module.GameOver
         protected override void Connect()
         {
             Subscribe<GameOverMessage>(_gameOver.OnGameOver);
-            Subscribe<UpdateHighScoreMessage>(_gameOver.OnUpdateHighScore);
-            Subscribe<UpdateScoreMessage>(_gameOver.OnUpdateScore);
+            Subscribe<ShowCalcScoreMessage>(_gameOver.OnShowCalcScore);
         }
 
         protected override void Disconnect()
         {
             Unsubscribe<GameOverMessage>(_gameOver.OnGameOver);
-            Unsubscribe<UpdateHighScoreMessage>(_gameOver.OnUpdateHighScore);
-            Unsubscribe<UpdateScoreMessage>(_gameOver.OnUpdateScore);
+            Unsubscribe<ShowCalcScoreMessage>(_gameOver.OnShowCalcScore);
         }
     }
 }

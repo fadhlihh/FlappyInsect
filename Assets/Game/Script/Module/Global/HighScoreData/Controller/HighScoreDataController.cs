@@ -16,11 +16,11 @@ namespace FlappyBird.Module.HighScoreData
             _model.SetHighScore(highScore);
             PlayerPrefs.SetInt("HighScore", _model.HighScore);
             PlayerPrefs.Save();
-            Publish<UpdateHighScoreMessage>(new UpdateHighScoreMessage(highScore));
         }
         public void Load()
         {
-            _model.SetHighScore(PlayerPrefs.GetInt("HighScore"));
+            int highScoreData = PlayerPrefs.GetInt("HighScore");
+            _model.SetHighScore(highScoreData);
         }
 
     }
