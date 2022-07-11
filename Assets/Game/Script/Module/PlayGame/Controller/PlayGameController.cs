@@ -1,7 +1,7 @@
-using Game.Base.MVC;
-using Game.Module.Input;
+using FlappyBird.Base.MVC;
+using FlappyBird.Module.Input;
 
-namespace Game.Module.PlayGame
+namespace FlappyBird.Module.PlayGame
 {
     public class PlayGameController : GameObjectController<PlayGameController, PlayGameModel, IPlayGameModel, PlayGameView>
     {

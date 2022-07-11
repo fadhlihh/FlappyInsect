@@ -1,8 +1,8 @@
-using Game.Base.MVC;
-using Game.Module.Input;
-using Game.Module.Bird;
+using FlappyBird.Base.MVC;
+using FlappyBird.Module.Input;
+using FlappyBird.Module.Bird;
 
-namespace Game.Module.GameplayAudio
+namespace FlappyBird.Module.GameplayAudio
 {
     public class GameplayAudioConnector : GameConnector
     {

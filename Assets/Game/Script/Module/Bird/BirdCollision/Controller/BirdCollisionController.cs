@@ -1,7 +1,7 @@
 using UnityEngine;
-using Game.Base.MVC;
+using FlappyBird.Base.MVC;
 
-namespace Game.Module.Bird
+namespace FlappyBird.Module.Bird
 {
     public class BirdCollisionController : GameObjectController<BirdCollisionController, BirdCollisionView>
     {
@@ -15,18 +15,15 @@ namespace Game.Module.Bird
         {
             bool isCollideWithGround = collision.CompareTag("Ground");
             bool isCollideWithPipe = collision.CompareTag("Pipe");
+            bool isTroughPipeHole = collision.CompareTag("Hole");
             if (isCollideWithGround || isCollideWithPipe)
             {
                 _view.GetComponent<CircleCollider2D>().enabled = false;
                 Publish<GameOverMessage>(new GameOverMessage());
             }
-            else if (collision.CompareTag("Hole"))
+            else if (isTroughPipeHole)
             {
-                bool isTroughPipeHole = collision.CompareTag("Hole");
-                if (isTroughPipeHole)
-                {
-                    Publish<AddScoreMessage>(new AddScoreMessage());
-                }
+                Publish<AddScoreMessage>(new AddScoreMessage());
             }
         }
     }

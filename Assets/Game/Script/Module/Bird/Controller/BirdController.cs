@@ -1,7 +1,7 @@
-using Game.Base.MVC;
 using Agate.MVC.Core;
+using FlappyBird.Base.MVC;
 
-namespace Game.Module.Bird
+namespace FlappyBird.Module.Bird
 {
     public class BirdController : GameGroupController<BirdController>
     {

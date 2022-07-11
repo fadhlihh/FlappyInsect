@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
-using Game.Base.MVC;
+using FlappyBird.Base.MVC;
 
-namespace Game.Module.PlayGame
+namespace FlappyBird.Module.PlayGame
 {
     public class PlayGameView : GameObjectView<IPlayGameModel>
     {

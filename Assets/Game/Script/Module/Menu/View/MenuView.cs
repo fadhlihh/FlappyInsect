@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
-using Game.Base.MVC;
+using FlappyBird.Base.MVC;
 
-namespace Game.Module.Menu
+namespace FlappyBird.Module.Menu
 {
     public class MenuView : GameObjectView<IMenuModel>
     {

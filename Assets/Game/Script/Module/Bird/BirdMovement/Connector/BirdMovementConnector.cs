@@ -1,7 +1,7 @@
-using Game.Base.MVC;
-using Game.Module.Input;
+using FlappyBird.Base.MVC;
+using FlappyBird.Module.Input;
 
-namespace Game.Module.Bird
+namespace FlappyBird.Module.Bird
 {
     public class BirdMovementConnector : GameConnector
     {

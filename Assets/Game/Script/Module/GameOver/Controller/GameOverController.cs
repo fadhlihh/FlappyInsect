@@ -1,12 +1,12 @@
 using System.Collections;
-using Game.Base.MVC;
-using Game.Boot;
-using Game.Utilty;
-using Game.Module.Bird;
-using Game.Module.HighScoreData;
-using Game.Module.Score;
+using FlappyBird.Base.MVC;
+using FlappyBird.Boot;
+using FlappyBird.Utilty;
+using FlappyBird.Module.Bird;
+using FlappyBird.Module.HighScoreData;
+using FlappyBird.Module.Score;
 
-namespace Game.Module.GameOver
+namespace FlappyBird.Module.GameOver
 {
     public class GameOverController : GameObjectController<GameOverController, GameOverModel, IGameOverModel, GameOverView>
     {

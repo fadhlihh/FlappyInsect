@@ -1,8 +1,8 @@
 using System.Collections;
 using UnityEngine;
-using Game.Base.MVC;
+using FlappyBird.Base.MVC;
 
-namespace Game.Module.HighScoreData
+namespace FlappyBird.Module.HighScoreData
 {
     public class HighScoreDataController : GameDataController<HighScoreDataController, HighScoreDataModel, IHighScoreDataModel>
     {

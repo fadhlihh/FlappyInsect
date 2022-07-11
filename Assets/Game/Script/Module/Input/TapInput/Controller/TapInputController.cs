@@ -1,9 +1,9 @@
 using System.Collections;
 using UnityEngine.InputSystem;
-using Game.Base.MVC;
-using Game.Module.Bird;
+using FlappyBird.Base.MVC;
+using FlappyBird.Module.Bird;
 
-namespace Game.Module.Input
+namespace FlappyBird.Module.Input
 {
     public class TapInputController : GameBaseController<TapInputController>
     {

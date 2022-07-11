@@ -1,9 +1,9 @@
 using UnityEngine;
-using Game.Base.MVC;
-using Game.Module.Input;
-using Game.Module.Bird;
+using FlappyBird.Base.MVC;
+using FlappyBird.Module.Input;
+using FlappyBird.Module.Bird;
 
-namespace Game.Module.PipeContainer
+namespace FlappyBird.Module.PipeContainer
 {
     public class PipeContainerController : GameObjectController<PipeContainerController, PipeContainerModel, IPipeContainerModel, PipeContainerView>
     {

@@ -1,8 +1,8 @@
 using UnityEngine;
-using Game.Base.MVC;
-using Game.Module.Menu;
+using FlappyBird.Base.MVC;
+using FlappyBird.Module.Menu;
 
-namespace Game.Scene.MainMenu
+namespace FlappyBird.Scene.MainMenu
 {
     public class MainMenuView : GameBaseSceneView
     {

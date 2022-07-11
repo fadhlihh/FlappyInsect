@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
-using Game.Base.MVC;
+using FlappyBird.Base.MVC;
 
-namespace Game.Module.GameOver
+namespace FlappyBird.Module.GameOver
 {
     public class GameOverView : GameObjectView<IGameOverModel>
     {

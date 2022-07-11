@@ -1,6 +1,6 @@
 using Agate.MVC.Base;
 
-namespace Game.Boot
+namespace FlappyBird.Boot
 {
     public class SceneLoader : BaseLoader<SceneLoader> { }
 }

@@ -1,7 +1,7 @@
-using Game.Base.MVC;
-using Game.Module.HighScoreData;
+using FlappyBird.Base.MVC;
+using FlappyBird.Module.HighScoreData;
 
-namespace Game.Module.Menu
+namespace FlappyBird.Module.Menu
 {
     public class MenuConnector : GameConnector
     {

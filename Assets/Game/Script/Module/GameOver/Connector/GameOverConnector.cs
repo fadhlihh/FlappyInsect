@@ -1,9 +1,9 @@
-using Game.Base.MVC;
-using Game.Module.Bird;
-using Game.Module.HighScoreData;
-using Game.Module.Score;
+using FlappyBird.Base.MVC;
+using FlappyBird.Module.Bird;
+using FlappyBird.Module.HighScoreData;
+using FlappyBird.Module.Score;
 
-namespace Game.Module.GameOver
+namespace FlappyBird.Module.GameOver
 {
     public class GameOverConnector : GameConnector
     {

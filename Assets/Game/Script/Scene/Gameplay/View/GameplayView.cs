@@ -1,12 +1,12 @@
 using UnityEngine;
-using Game.Base.MVC;
-using Game.Module.PlayGame;
-using Game.Module.PipeContainer;
-using Game.Module.Bird;
-using Game.Module.Score;
-using Game.Module.GameOver;
+using FlappyBird.Base.MVC;
+using FlappyBird.Module.PlayGame;
+using FlappyBird.Module.PipeContainer;
+using FlappyBird.Module.Bird;
+using FlappyBird.Module.Score;
+using FlappyBird.Module.GameOver;
 
-namespace Game.Scene.Gameplay
+namespace FlappyBird.Scene.Gameplay
 {
     public class GameplayView : GameBaseSceneView
     {

@@ -1,4 +1,4 @@
-namespace Game.Module.Score
+namespace FlappyBird.Module.Score
 {
     public class UpdateScoreMessage
     {

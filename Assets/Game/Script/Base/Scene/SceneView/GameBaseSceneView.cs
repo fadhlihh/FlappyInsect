@@ -1,8 +1,6 @@
-using UnityEngine;
-
 using Agate.MVC.Base;
 
-namespace Game.Base.MVC
+namespace FlappyBird.Base.MVC
 {
     public class GameBaseSceneView : BaseSceneView { }
 }

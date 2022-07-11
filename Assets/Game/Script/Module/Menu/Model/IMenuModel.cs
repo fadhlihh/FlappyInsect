@@ -1,6 +1,6 @@
-using Game.Base.MVC;
+using FlappyBird.Base.MVC;
 
-namespace Game.Module.Menu
+namespace FlappyBird.Module.Menu
 {
     public interface IMenuModel : IGameBaseModel
     {

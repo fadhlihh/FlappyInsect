@@ -4,9 +4,9 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
 using Agate.MVC.Base;
 using Agate.MVC.Core;
-using Game.Module.HighScoreData;
+using FlappyBird.Module.HighScoreData;
 
-namespace Game.Boot
+namespace FlappyBird.Boot
 {
     public class GameLauncher : BaseMain<GameLauncher>, IMain
     {

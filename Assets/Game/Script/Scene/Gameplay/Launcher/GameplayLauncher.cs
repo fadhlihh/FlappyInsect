@@ -1,17 +1,17 @@
 using System.Collections;
 using Agate.MVC.Base;
 using Agate.MVC.Core;
-using Game.Boot;
-using Game.Utilty;
-using Game.Module.Input;
-using Game.Module.PlayGame;
-using Game.Module.PipeContainer;
-using Game.Module.Bird;
-using Game.Module.Score;
-using Game.Module.GameOver;
-using Game.Module.GameplayAudio;
+using FlappyBird.Boot;
+using FlappyBird.Utilty;
+using FlappyBird.Module.Input;
+using FlappyBird.Module.PlayGame;
+using FlappyBird.Module.PipeContainer;
+using FlappyBird.Module.Bird;
+using FlappyBird.Module.Score;
+using FlappyBird.Module.GameOver;
+using FlappyBird.Module.GameplayAudio;
 
-namespace Game.Scene.Gameplay
+namespace FlappyBird.Scene.Gameplay
 {
     public class GameplayLauncher : SceneLauncher<GameplayLauncher, GameplayView>
     {

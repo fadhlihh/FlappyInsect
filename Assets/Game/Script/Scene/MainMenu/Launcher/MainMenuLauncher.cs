@@ -1,11 +1,11 @@
 using System.Collections;
 using Agate.MVC.Base;
 using Agate.MVC.Core;
-using Game.Boot;
-using Game.Utilty;
-using Game.Module.Menu;
+using FlappyBird.Boot;
+using FlappyBird.Utilty;
+using FlappyBird.Module.Menu;
 
-namespace Game.Scene.MainMenu
+namespace FlappyBird.Scene.MainMenu
 {
     public class MainMenuLauncher : SceneLauncher<MainMenuLauncher, MainMenuView>
     {

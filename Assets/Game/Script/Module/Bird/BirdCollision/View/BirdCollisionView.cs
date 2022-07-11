@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
-using Game.Base.MVC;
+using FlappyBird.Base.MVC;
 
-namespace Game.Module.Bird
+namespace FlappyBird.Module.Bird
 {
     public class BirdCollisionView : GameBaseView
     {

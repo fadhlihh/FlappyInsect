@@ -1,6 +1,6 @@
-using Game.Base.MVC;
+using FlappyBird.Base.MVC;
 
-namespace Game.Module.Score
+namespace FlappyBird.Module.Score
 {
     public interface IScoreModel : IGameBaseModel
     {

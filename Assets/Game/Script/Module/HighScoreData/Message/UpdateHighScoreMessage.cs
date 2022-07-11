@@ -1,4 +1,4 @@
-namespace Game.Module.HighScoreData
+namespace FlappyBird.Module.HighScoreData
 {
     public class UpdateHighScoreMessage
     {

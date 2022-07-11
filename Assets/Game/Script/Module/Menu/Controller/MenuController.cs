@@ -1,11 +1,11 @@
 using System.Collections;
 using UnityEngine;
-using Game.Base.MVC;
-using Game.Boot;
-using Game.Module.HighScoreData;
-using Game.Utilty;
+using FlappyBird.Base.MVC;
+using FlappyBird.Boot;
+using FlappyBird.Module.HighScoreData;
+using FlappyBird.Utilty;
 
-namespace Game.Module.Menu
+namespace FlappyBird.Module.Menu
 {
     public class MenuController : GameObjectController<MenuController, MenuModel, IMenuModel, MenuView>
     {

@@ -1,4 +1,4 @@
-namespace Game.Module.Input
+namespace FlappyBird.Module.Input
 {
     public class StartPlayMessage { }
 }

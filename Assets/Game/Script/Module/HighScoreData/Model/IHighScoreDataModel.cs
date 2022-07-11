@@ -1,6 +1,6 @@
-using Game.Base.MVC;
+using FlappyBird.Base.MVC;
 
-namespace Game.Module.HighScoreData
+namespace FlappyBird.Module.HighScoreData
 {
     public interface IHighScoreDataModel : IGameBaseModel
     {

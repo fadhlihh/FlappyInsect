@@ -1,7 +1,7 @@
 using UnityEngine;
-using Game.Base.MVC;
+using FlappyBird.Base.MVC;
 
-namespace Game.Module.PipeContainer
+namespace FlappyBird.Module.PipeContainer
 {
     public interface IPipeContainerModel : IGameBaseModel
     {

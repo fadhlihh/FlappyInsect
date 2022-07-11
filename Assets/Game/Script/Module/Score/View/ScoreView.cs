@@ -1,8 +1,8 @@
 using UnityEngine;
 using TMPro;
-using Game.Base.MVC;
+using FlappyBird.Base.MVC;
 
-namespace Game.Module.Score
+namespace FlappyBird.Module.Score
 {
     public class ScoreView : GameObjectView<IScoreModel>
     {

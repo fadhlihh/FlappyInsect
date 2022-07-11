@@ -1,4 +1,4 @@
-namespace Game.Module.Bird
+namespace FlappyBird.Module.Bird
 {
     public class GameOverMessage { }
 }

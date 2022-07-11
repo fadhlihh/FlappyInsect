@@ -1,9 +1,9 @@
-using Game.Base.MVC;
-using Game.Module.HighScoreData;
-using Game.Module.Input;
-using Game.Module.Bird;
+using FlappyBird.Base.MVC;
+using FlappyBird.Module.HighScoreData;
+using FlappyBird.Module.Input;
+using FlappyBird.Module.Bird;
 
-namespace Game.Module.Score
+namespace FlappyBird.Module.Score
 {
     public class ScoreController : GameObjectController<ScoreController, ScoreModel, IScoreModel, ScoreView>
     {

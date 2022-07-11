@@ -11,4 +11,4 @@ ScriptedImporter:
   generateWrapperCode: 1
   wrapperCodePath: Assets/Game/Script/Module/Input/InputActionMap/InputActionManager.cs
   wrapperClassName: InputActionManager
-  wrapperCodeNamespace: Game.Module.Input
+  wrapperCodeNamespace: FlappyBird.Module.Input

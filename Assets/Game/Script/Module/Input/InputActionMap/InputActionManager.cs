@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-namespace Game.Module.Input
+namespace FlappyBird.Module.Input
 {
     public partial class @InputActionManager : IInputActionCollection2, IDisposable
     {
