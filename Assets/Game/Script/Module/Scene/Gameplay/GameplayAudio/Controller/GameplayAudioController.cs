@@ -1,47 +1,43 @@
-using UnityEngine;
-using FlappyBird.Base.MVC;
-using FlappyBird.Module.Input;
-using FlappyBird.Module.Bird;
+using System.Collections;
+using Agate.MVC.Base;
+using FlappyInsect.Message;
+using FlappyInsect.Module.ConfigData;
 
-namespace FlappyBird.Module.GameplayAudio
+namespace FlappyInsect.Module.GameplayAudio
 {
-    public class GameplayAudioController : GameBaseController<GameplayAudioController>
+    public class GameplayAudioController : ObjectController<GameplayAudioController, GameplayAudioModel, IGameplayAudioModel, GameplayAudioView>
     {
-        private AudioSource _birdWingsSFX;
-        private AudioSource _addScoreSFX;
-        private AudioSource _birdHitSFX;
-        private AudioSource _gameOverSFX;
+        private ConfigDataController _configData;
 
-        public void OnMoveBird(MoveBirdMessage message)
+        public override IEnumerator Finalize()
         {
-            _birdWingsSFX.Play();
+            yield return base.Finalize();
+            _model.SetIsMuted(!_configData.Model.IsSfxOn);
         }
+
+        public void OnUpdateSfxConfig(UpdateSfxConfigMessage message)
+        {
+            _model.SetIsMuted(!message.IsSfxOn);
+        }
+
+        public void OnMoveInsect(MoveInsectMessage message)
+        {
+            _view.PlayBirdWingsSfx();
+        }
+
         public void OnAddScore(AddScoreMessage message)
         {
-            _addScoreSFX.Play();
+            _view.PlayAddScoreSfx();
         }
+
+        public void OnAddCoin(AddCoinMessage message)
+        {
+            _view.PlayAddCoinSfx();
+        }
+
         public void OnGameOver(GameOverMessage message)
         {
-            _birdHitSFX.Play();
-            _gameOverSFX.Play();
-        }
-
-        public void SetBirdWingsSFX(AudioSource birdWingsSFX)
-        {
-            _birdWingsSFX = birdWingsSFX;
-        }
-
-        public void SetAddScoreSFX(AudioSource addScoreSFX)
-        {
-            _addScoreSFX = addScoreSFX;
-        }
-        public void SetBirdHitSFX(AudioSource birdHitSFX)
-        {
-            _birdHitSFX = birdHitSFX;
-        }
-        public void SetGameOverSFX(AudioSource gameOverSFX)
-        {
-            _gameOverSFX = gameOverSFX;
+            _view.PlayGameOverSfx();
         }
     }
 }

@@ -1,27 +1,39 @@
-using System.Collections;
-using FlappyBird.Base.MVC;
-using FlappyBird.Boot;
-using FlappyBird.Utilty;
-using FlappyBird.Module.Bird;
-using FlappyBird.Module.HighScoreData;
-using FlappyBird.Module.Score;
+using UnityEngine;
+using Agate.MVC.Base;
+using FlappyInsect.Boot;
+using FlappyInsect.Utilty;
+using FlappyInsect.Message;
+using FlappyInsect.Module.ProgressData;
+using FlappyInsect.Module.ScoreCalculator;
+using FlappyInsect.Module.CoinCalculator;
 
-namespace FlappyBird.Module.GameOver
+namespace FlappyInsect.Module.GameOver
 {
-    public class GameOverController : GameObjectController<GameOverController, GameOverModel, IGameOverModel, GameOverView>
+    public class GameOverController : ObjectController<GameOverController, GameOverModel, IGameOverModel, GameOverView>
     {
-        private HighScoreDataController _highScoreData;
+        private ProgressDataController _progressData;
+        private ScoreCalculatorController _scoreCalculator;
+        private CoinCalculatorController _coinCalculator;
 
         public void OnGameOver(GameOverMessage message)
         {
-            _view.SetCallbacks(OnRestart, OnToMainMenu);
-            _view.ShowGameOverPopUp();
+            _view.SetCallbacks(OnRestart, OnToMainMenu, OnToExitGame);
+            _model.SetScore(_scoreCalculator.Model.Score);
+            CheckHighScore(_model.Score);
+            _model.SetHighScore(_progressData.Model.Progress.HighScore);
+            _model.SetCoin(_coinCalculator.Model.Coin);
+            int coin = _progressData.Model.Progress.Coin + _coinCalculator.Model.Coin;
+            _progressData.SetTotalCoin(coin);
+            _progressData.SaveProgress();
+            _view.Show();
         }
 
-        public void OnShowCalcScore(ShowCalcScoreMessage message)
+        private void CheckHighScore(int score)
         {
-            _model.SetScore(message.Score);
-            _model.SetHighScore(message.HighScore);
+            if (score > _progressData.Model.Progress.HighScore)
+            {
+                _progressData.SetNewHighScore(score);
+            }
         }
 
         private void OnRestart()
@@ -32,6 +44,11 @@ namespace FlappyBird.Module.GameOver
         private void OnToMainMenu()
         {
             SceneLoader.Instance.LoadScene(GameScene.MainMenu);
+        }
+
+        private void OnToExitGame()
+        {
+            Application.Quit();
         }
     }
 }

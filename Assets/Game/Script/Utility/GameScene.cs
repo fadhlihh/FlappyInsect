@@ -1,4 +1,4 @@
-namespace FlappyBird.Utilty
+namespace FlappyInsect.Utilty
 {
     public static class GameScene
     {

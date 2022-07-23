@@ -1,24 +1,20 @@
-using FlappyBird.Base.MVC;
-using FlappyBird.Module.Bird;
-using FlappyBird.Module.HighScoreData;
-using FlappyBird.Module.Score;
+using Agate.MVC.Base;
+using FlappyInsect.Message;
 
-namespace FlappyBird.Module.GameOver
+namespace FlappyInsect.Module.GameOver
 {
-    public class GameOverConnector : GameConnector
+    public class GameOverConnector : BaseConnector
     {
         private GameOverController _gameOver;
 
         protected override void Connect()
         {
             Subscribe<GameOverMessage>(_gameOver.OnGameOver);
-            Subscribe<ShowCalcScoreMessage>(_gameOver.OnShowCalcScore);
         }
 
         protected override void Disconnect()
         {
             Unsubscribe<GameOverMessage>(_gameOver.OnGameOver);
-            Unsubscribe<ShowCalcScoreMessage>(_gameOver.OnShowCalcScore);
         }
     }
 }

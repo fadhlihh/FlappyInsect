@@ -1,31 +1,28 @@
 using System.Collections;
 using UnityEngine;
-using FlappyBird.Base.MVC;
-using FlappyBird.Boot;
-using FlappyBird.Module.HighScoreData;
-using FlappyBird.Utilty;
+using Agate.MVC.Base;
+using FlappyInsect.Boot;
+using FlappyInsect.Message;
+using FlappyInsect.Utilty;
 
-namespace FlappyBird.Module.Menu
+namespace FlappyInsect.Module.Menu
 {
-    public class MenuController : GameObjectController<MenuController, MenuModel, IMenuModel, MenuView>
+    public class MenuController : ObjectController<MenuController, MenuView>
     {
-        private HighScoreDataController _highScore;
-
-        public override IEnumerator Finalize()
-        {
-            yield return base.Finalize();
-            _model.SetHighScore(_highScore.Model.HighScore);
-        }
-
         public override void SetView(MenuView view)
         {
             base.SetView(view);
-            view.SetCallbacks(OnPlay, OnExit);
+            view.SetCallbacks(OnPlay, OnSetting, OnExit);
         }
 
         private void OnPlay()
         {
             SceneLoader.Instance.LoadScene(GameScene.GamePlay);
+        }
+
+        private void OnSetting()
+        {
+            Publish<ShowSettingMessage>(new ShowSettingMessage());
         }
 
         private void OnExit()

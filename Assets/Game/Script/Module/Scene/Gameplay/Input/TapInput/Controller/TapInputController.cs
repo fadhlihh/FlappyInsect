@@ -1,19 +1,21 @@
 using System.Collections;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using FlappyBird.Base.MVC;
-using FlappyBird.Module.Bird;
+using Agate.MVC.Base;
+using FlappyInsect.Message;
 
-namespace FlappyBird.Module.Input
+namespace FlappyInsect.Module.Input
 {
-    public class TapInputController : GameBaseController<TapInputController>
+    public class TapInputController : BaseController<TapInputController>
     {
         private InputActionManager _inputActionsManager = new InputActionManager();
+
         public override IEnumerator Initialize()
         {
+            yield return base.Initialize();
             _inputActionsManager.UI.Enable();
             _inputActionsManager.UI.TapStart.performed += OnTapStart;
             _inputActionsManager.Character.Tap.performed += OnTap;
-            return base.Initialize();
         }
 
         public void OnGameOver(GameOverMessage message)
@@ -23,7 +25,8 @@ namespace FlappyBird.Module.Input
 
         private void OnTapStart(InputAction.CallbackContext context)
         {
-            if (context.performed)
+            bool isOverUI = EventSystem.current.IsPointerOverGameObject();
+            if (context.performed && !isOverUI)
             {
                 _inputActionsManager.Character.Enable();
                 _inputActionsManager.UI.Disable();
@@ -33,9 +36,10 @@ namespace FlappyBird.Module.Input
 
         private void OnTap(InputAction.CallbackContext context)
         {
-            if (context.performed)
+            bool isOverUI = EventSystem.current.IsPointerOverGameObject();
+            if (context.performed && !isOverUI)
             {
-                Publish<MoveBirdMessage>(new MoveBirdMessage());
+                Publish<MoveInsectMessage>(new MoveInsectMessage());
             }
         }
     }

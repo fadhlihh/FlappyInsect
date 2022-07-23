@@ -1,11 +1,12 @@
-using FlappyBird.Base.MVC;
+using Agate.MVC.Base;
 
-namespace FlappyBird.Module.GameOver
+namespace FlappyInsect.Module.GameOver
 {
-    public class GameOverModel : GameBaseModel, IGameOverModel
+    public class GameOverModel : BaseModel, IGameOverModel
     {
         public int Score { get; private set; } = 0;
         public int HighScore { get; private set; } = 0;
+        public int Coin { get; private set; } = 0;
 
         public void SetScore(int score)
         {
@@ -16,6 +17,11 @@ namespace FlappyBird.Module.GameOver
         public void SetHighScore(int highScore)
         {
             HighScore = highScore;
+            SetDataAsDirty();
+        }
+        public void SetCoin(int coin)
+        {
+            Coin = coin;
             SetDataAsDirty();
         }
     }

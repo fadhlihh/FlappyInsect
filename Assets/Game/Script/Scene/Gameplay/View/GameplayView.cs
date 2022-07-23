@@ -1,39 +1,39 @@
 using UnityEngine;
-using FlappyBird.Base.MVC;
-using FlappyBird.Module.PlayGame;
-using FlappyBird.Module.PipeContainer;
-using FlappyBird.Module.Bird;
-using FlappyBird.Module.Score;
-using FlappyBird.Module.GameOver;
+using Agate.MVC.Base;
+using FlappyInsect.Module.HUD;
+using FlappyInsect.Module.Shop;
+using FlappyInsect.Module.InsectSelection;
+using FlappyInsect.Module.GameSetting;
+using FlappyInsect.Module.GamePause;
+using FlappyInsect.Module.ObstaclePool;
+using FlappyInsect.Module.Insect;
+using FlappyInsect.Module.CoinPool;
+using FlappyInsect.Module.GameOver;
+using FlappyInsect.Module.GameplayAudio;
 
-namespace FlappyBird.Scene.Gameplay
+namespace FlappyInsect.Scene.Gameplay
 {
-    public class GameplayView : GameBaseSceneView
+    public class GameplayView : BaseSceneView
     {
-        [Header("Camera")]
         [SerializeField]
-        public Camera MainCamera;
-        [Header("View")]
+        public HUDView HUDView;
         [SerializeField]
-        public PlayGameView PlayGameView;
+        public InsectSelectionView InsectSelectionView;
         [SerializeField]
-        public PipeContainerView PipeContainerView;
+        public ShopView ShopView;
         [SerializeField]
-        public BirdCollisionView BirdCollisionView;
+        public GameSettingView GameSettingView;
         [SerializeField]
-        public ScoreView ScoreCounterView;
+        public GamePauseView GamePauseView;
+        [SerializeField]
+        public ObstaclePoolView ObstaclePoolView;
+        [SerializeField]
+        public InsectView InsectView;
+        [SerializeField]
+        public CoinPoolView CoinPoolView;
         [SerializeField]
         public GameOverView GameOverView;
         [SerializeField]
-        public Rigidbody2D BirdPhysics;
-        [Header("Audio")]
-        [SerializeField]
-        public AudioSource BirdWingsSFX;
-        [SerializeField]
-        public AudioSource AddScoreSFX;
-        [SerializeField]
-        public AudioSource BirdHitSFX;
-        [SerializeField]
-        public AudioSource GameOverSFX;
+        public GameplayAudioView GameplayAudioView;
     }
 }

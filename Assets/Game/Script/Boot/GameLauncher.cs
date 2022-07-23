@@ -4,22 +4,29 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
 using Agate.MVC.Base;
 using Agate.MVC.Core;
-using FlappyBird.Module.HighScoreData;
+using FlappyInsect.Module.InsectsData;
+using FlappyInsect.Module.ProgressData;
+using FlappyInsect.Module.ConfigData;
+using FlappyInsect.Module.GameAudio;
 
-namespace FlappyBird.Boot
+namespace FlappyInsect.Boot
 {
     public class GameLauncher : BaseMain<GameLauncher>, IMain
     {
         protected override IConnector[] GetConnectors()
         {
             return new IConnector[]{
+                new GameAudioConnector()
             };
         }
 
         protected override IController[] GetDependencies()
         {
             return new IController[] {
-                new HighScoreDataController()
+                new InsectsDataController(),
+                new ProgressDataController(),
+                new ConfigDataController(),
+                new GameAudioController()
             };
         }
 

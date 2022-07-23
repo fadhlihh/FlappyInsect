@@ -1,36 +1,27 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
-using TMPro;
-using FlappyBird.Base.MVC;
+using Agate.MVC.Base;
 
-namespace FlappyBird.Module.Menu
+namespace FlappyInsect.Module.Menu
 {
-    public class MenuView : GameObjectView<IMenuModel>
+    public class MenuView : BaseView
     {
         [SerializeField]
         private Button _playButton;
         [SerializeField]
-        private Button _exitGameButton;
+        private Button _settingButton;
         [SerializeField]
-        private TextMeshProUGUI _highScoreText;
+        private Button _exitGameButton;
 
-        public void SetCallbacks(UnityAction onPlay, UnityAction onExit)
+        public void SetCallbacks(UnityAction onPlay, UnityAction onSetting, UnityAction onExit)
         {
             _playButton.onClick.RemoveAllListeners();
-            _playButton.onClick.AddListener(onPlay);
+            _settingButton.onClick.RemoveAllListeners();
             _exitGameButton.onClick.RemoveAllListeners();
+            _playButton.onClick.AddListener(onPlay);
+            _settingButton.onClick.AddListener(onSetting);
             _exitGameButton.onClick.AddListener(onExit);
-        }
-
-        protected override void InitRenderModel(IMenuModel model)
-        {
-            _highScoreText.text = $"High Score: {model.HighScore}";
-        }
-
-        protected override void UpdateRenderModel(IMenuModel model)
-        {
-            _highScoreText.text = $"High Score: {model.HighScore}";
         }
     }
 }

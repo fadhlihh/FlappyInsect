@@ -1,0 +1,14 @@
+{
+    "HighScore": 0,
+    "Coin": 0,
+    "Insects": [
+        {
+            "Name": "Insect1",
+            "Cost": 0
+        }
+    ],
+    "SelectedInsect": {
+        "Name": "Insect1",
+        "Cost": 0
+    }
+}

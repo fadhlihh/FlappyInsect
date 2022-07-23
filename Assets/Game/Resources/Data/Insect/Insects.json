@@ -1,0 +1,24 @@
+{
+    "Insects": [
+        {
+            "Name": "Insect1",
+            "Cost": 0
+        },
+        {
+            "Name": "Insect2",
+            "Cost": 0
+        },
+        {
+            "Name": "Insect3",
+            "Cost": 50
+        },
+        {
+            "Name": "Insect4",
+            "Cost": 100
+        },
+        {
+            "Name": "Insect5",
+            "Cost": 200
+        }
+    ]
+}

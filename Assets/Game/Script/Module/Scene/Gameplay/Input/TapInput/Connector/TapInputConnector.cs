@@ -1,9 +1,9 @@
-using FlappyBird.Base.MVC;
-using FlappyBird.Module.Bird;
+using Agate.MVC.Base;
+using FlappyInsect.Message;
 
-namespace FlappyBird.Module.Input
+namespace FlappyInsect.Module.Input
 {
-    public class TapInputConnector : GameConnector
+    public class TapInputConnector : BaseConnector
     {
         private TapInputController _tapInput;
         protected override void Connect()
@@ -13,7 +13,7 @@ namespace FlappyBird.Module.Input
 
         protected override void Disconnect()
         {
-            Subscribe<GameOverMessage>(_tapInput.OnGameOver);
+            Unsubscribe<GameOverMessage>(_tapInput.OnGameOver);
         }
     }
 }

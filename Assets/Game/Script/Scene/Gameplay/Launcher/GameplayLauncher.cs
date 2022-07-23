@@ -1,25 +1,35 @@
 using System.Collections;
 using Agate.MVC.Base;
 using Agate.MVC.Core;
-using FlappyBird.Boot;
-using FlappyBird.Utilty;
-using FlappyBird.Module.Input;
-using FlappyBird.Module.PlayGame;
-using FlappyBird.Module.PipeContainer;
-using FlappyBird.Module.Bird;
-using FlappyBird.Module.Score;
-using FlappyBird.Module.GameOver;
-using FlappyBird.Module.GameplayAudio;
+using FlappyInsect.Boot;
+using FlappyInsect.Utilty;
+using FlappyInsect.Module.Input;
+using FlappyInsect.Module.HUD;
+using FlappyInsect.Module.Shop;
+using FlappyInsect.Module.InsectSelection;
+using FlappyInsect.Module.GameSetting;
+using FlappyInsect.Module.GamePause;
+using FlappyInsect.Module.ObstaclePool;
+using FlappyInsect.Module.Insect;
+using FlappyInsect.Module.Coin;
+using FlappyInsect.Module.CoinPool;
+using FlappyInsect.Module.CoinCalculator;
+using FlappyInsect.Module.ScoreCalculator;
+using FlappyInsect.Module.GameOver;
+using FlappyInsect.Module.GameplayAudio;
 
-namespace FlappyBird.Scene.Gameplay
+namespace FlappyInsect.Scene.Gameplay
 {
     public class GameplayLauncher : SceneLauncher<GameplayLauncher, GameplayView>
     {
-        private PlayGameController _playGame;
-        private PipeContainerController _pipeContainer;
-        private BirdMovementController _birdMovement;
-        private BirdCollisionController _birdCollision;
-        private ScoreController _scoreCounter;
+        private HUDController _hud;
+        private InsectSelectionController _insectSelection;
+        private ShopController _shop;
+        private GameSettingController _gameSetting;
+        private GamePauseController _gamePause;
+        private ObstaclePoolController _obstaclePool;
+        private InsectController _insect;
+        private CoinPoolController _coinPool;
         private GameOverController _gameOverPopUp;
         private GameplayAudioController _gameplayAudio;
 
@@ -29,10 +39,16 @@ namespace FlappyBird.Scene.Gameplay
         {
             return new IConnector[] {
                 new TapInputConnector(),
-                new PlayGameConnector(),
-                new PipeContainerConnector(),
-                new BirdMovementConnector(),
-                new ScoreConnector(),
+                new HUDConnector(),
+                new ShopConnector(),
+                new InsectSelectionConnector(),
+                new GameSettingConnector(),
+                new GamePauseConnector(),
+                new ObstaclePoolConnector(),
+                new InsectConnector(),
+                new CoinPoolConnector(),
+                new CoinCalculatorConnector(),
+                new ScoreCalculatorConnector(),
                 new GameOverConnector(),
                 new GameplayAudioConnector()
             };
@@ -42,10 +58,15 @@ namespace FlappyBird.Scene.Gameplay
         {
             return new IController[] {
                 new TapInputController(),
-                new PlayGameController(),
-                new PipeContainerController(),
-                new BirdController(),
-                new ScoreController(),
+                new HUDController(),
+                new ShopController(),
+                new InsectSelectionController(),
+                new GameSettingController(),
+                new GamePauseController(),
+                new ObstaclePoolController(),
+                new InsectController(),
+                new CoinController(),
+                new ScoreCalculatorController(),
                 new GameOverController(),
                 new GameplayAudioController()
         };
@@ -53,25 +74,16 @@ namespace FlappyBird.Scene.Gameplay
 
         protected override IEnumerator InitSceneObject()
         {
-            #region SetModuleView
-            _playGame.SetView(_view.PlayGameView);
-            _pipeContainer.SetView(_view.PipeContainerView);
-            _birdCollision.SetView(_view.BirdCollisionView);
-            _scoreCounter.SetView(_view.ScoreCounterView);
+            _hud.SetView(_view.HUDView);
+            _obstaclePool.SetView(_view.ObstaclePoolView);
+            _insectSelection.SetView(_view.InsectSelectionView);
+            _shop.SetView(_view.ShopView);
+            _gameSetting.SetView(_view.GameSettingView);
+            _gamePause.SetView(_view.GamePauseView);
+            _insect.SetView(_view.InsectView);
+            _coinPool.SetView(_view.CoinPoolView);
             _gameOverPopUp.SetView(_view.GameOverView);
-            #endregion
-            #region SetInitPipePosition
-            _pipeContainer.SetInitPosition(_view.MainCamera);
-            #endregion
-            #region SetBirdPhysics
-            _birdMovement.SetBirdPhysics(_view.BirdPhysics);
-            #endregion
-            #region SetAudio
-            _gameplayAudio.SetBirdWingsSFX(_view.BirdWingsSFX);
-            _gameplayAudio.SetAddScoreSFX(_view.AddScoreSFX);
-            _gameplayAudio.SetBirdHitSFX(_view.BirdHitSFX);
-            _gameplayAudio.SetGameOverSFX(_view.GameOverSFX);
-            #endregion
+            _gameplayAudio.SetView(_view.GameplayAudioView);
             yield return null;
         }
 
