@@ -130,7 +130,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.80000305, y: -155.80002}
+  m_AnchoredPosition: {x: -0.80000305, y: -155.7998}
   m_SizeDelta: {x: 244, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &674152580587355126
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_text: Game Pause
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dec91ecf1fff5ea43ae6c938ac0d290b, type: 2}
-  m_sharedMaterial: {fileID: -6009726293187353258, guid: b2184697490677f4cb99dee4eb5cbb63, type: 2}
+  m_sharedMaterial: {fileID: 3201152765794562871, guid: dec91ecf1fff5ea43ae6c938ac0d290b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &674152580601087931
