@@ -5,7 +5,7 @@ namespace FlappyInsect.Module.CoinCalculator
 {
     public class CoinCalculatorController : DataController<CoinCalculatorController, CoinCalculatorModel, ICoinCalculatorModel>
     {
-        public void OnAddCoin(AddCoinMessage message)
+        public void OnAddCoin()
         {
             _model.AddCoin();
             Publish<UpdateCoinMessage>(new UpdateCoinMessage(_model.Coin));

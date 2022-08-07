@@ -9,13 +9,11 @@ namespace FlappyInsect.Module.Shop
         protected override void Connect()
         {
             Subscribe<ShowShopMessage>(_shop.OnShowShop);
-            Subscribe<PurchaseInsectMessage>(_shop.OnPurchaseInsect);
         }
 
         protected override void Disconnect()
         {
             Unsubscribe<ShowShopMessage>(_shop.OnShowShop);
-            Unsubscribe<PurchaseInsectMessage>(_shop.OnPurchaseInsect);
         }
     }
 }

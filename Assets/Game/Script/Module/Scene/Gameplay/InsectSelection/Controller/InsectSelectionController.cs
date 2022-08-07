@@ -12,7 +12,6 @@ namespace FlappyInsect.Module.InsectSelection
     {
         private InsectsDataController _insectData;
         private ProgressDataController _progressData;
-        private List<InsectSelectionItemController> _insectSelectionItemPool = new List<InsectSelectionItemController>();
 
         public override void SetView(InsectSelectionView view)
         {
@@ -30,18 +29,16 @@ namespace FlappyInsect.Module.InsectSelection
         {
             InsectData insect = _model.CollectedInsects.Find(item => string.Equals(item.Name, message.Name));
             _model.SetSelectedInsect(insect);
-            _progressData.ChangeSelectedInsect(insect);
-            _progressData.SaveProgress();
         }
 
-        public void OnPurchaseInsect(PurchaseInsectMessage message)
+        public void OnPurchaseInsect()
         {
             _model.SetCollectedInsect(_progressData.Model.Progress.Insects);
         }
 
         public void OnShowInsectSelectionItem()
         {
-            if (_insectSelectionItemPool.Count <= 0)
+            if (_model.InsectSelectionItemCount <= 0)
             {
                 CreateInsectSelectionItem();
             }
@@ -63,7 +60,7 @@ namespace FlappyInsect.Module.InsectSelection
                 InsectSelectionItemController insectSelectionItem = new InsectSelectionItemController();
                 InjectDependencies(insectSelectionItem);
                 insectSelectionItem.Init(itemModel, itemView);
-                _insectSelectionItemPool.Add(insectSelectionItem);
+                _model.AddSelectionItem(insectSelectionItem);
             }
         }
 
@@ -73,7 +70,7 @@ namespace FlappyInsect.Module.InsectSelection
             {
                 bool isUnlocked = _model.CollectedInsects.Exists(item => string.Equals(item.Name, insect.Name));
                 bool isSelected = string.Equals(insect.Name, _model.SelectedInsect.Name);
-                InsectSelectionItemController insectSelectionItem = _insectSelectionItemPool.Find(item => string.Equals(insect.Name, item.Model.Name));
+                InsectSelectionItemController insectSelectionItem = _model.FindSelectionItem(insect.Name);
                 insectSelectionItem.UpdateModelData(insect.Name, isSelected, isUnlocked);
             }
         }

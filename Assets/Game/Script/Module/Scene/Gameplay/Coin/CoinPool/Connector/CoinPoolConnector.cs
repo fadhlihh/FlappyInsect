@@ -10,14 +10,12 @@ namespace FlappyInsect.Module.CoinPool
         {
             Subscribe<StartPlayMessage>(_coinPool.OnStartPlay);
             Subscribe<GameOverMessage>(_coinPool.OnGameOver);
-            Subscribe<AddCoinMessage>(_coinPool.OnAddCoin);
         }
 
         protected override void Disconnect()
         {
             Unsubscribe<StartPlayMessage>(_coinPool.OnStartPlay);
             Unsubscribe<GameOverMessage>(_coinPool.OnGameOver);
-            Unsubscribe<AddCoinMessage>(_coinPool.OnAddCoin);
         }
     }
 }

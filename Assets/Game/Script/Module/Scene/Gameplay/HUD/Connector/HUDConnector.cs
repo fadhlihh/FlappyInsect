@@ -11,7 +11,6 @@ namespace FlappyInsect.Module.HUD
             Subscribe<StartPlayMessage>(_hud.OnStartPlay);
             Subscribe<UpdateScoreMessage>(_hud.OnUpdateScore);
             Subscribe<UpdateCoinMessage>(_hud.OnUpdateCoin);
-            Subscribe<PurchaseInsectMessage>(_hud.OnPurchaseInsect);
         }
 
         protected override void Disconnect()
@@ -19,7 +18,6 @@ namespace FlappyInsect.Module.HUD
             Unsubscribe<StartPlayMessage>(_hud.OnStartPlay);
             Unsubscribe<UpdateScoreMessage>(_hud.OnUpdateScore);
             Unsubscribe<UpdateCoinMessage>(_hud.OnUpdateCoin);
-            Unsubscribe<PurchaseInsectMessage>(_hud.OnPurchaseInsect);
         }
     }
 }

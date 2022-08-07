@@ -30,7 +30,7 @@ namespace FlappyInsect.Module.GameplayAudio
             _view.PlayAddScoreSfx();
         }
 
-        public void OnAddCoin(AddCoinMessage message)
+        public void OnAddCoin()
         {
             _view.PlayAddCoinSfx();
         }

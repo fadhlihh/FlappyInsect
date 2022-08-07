@@ -13,6 +13,12 @@ namespace FlappyInsect.Module.ProgressData
             SetDataAsDirty();
         }
 
+        public void AddCollectedInsect(InsectData insect)
+        {
+            Progress.Insects.Add(insect);
+            SetDataAsDirty();
+        }
+
         public void SetHighScore(int highScore)
         {
             Progress.HighScore = highScore;
@@ -25,7 +31,7 @@ namespace FlappyInsect.Module.ProgressData
             SetDataAsDirty();
         }
 
-        public void ChangeSelectedInsect(InsectData insect)
+        public void SetSelectedInsect(InsectData insect)
         {
             Progress.SelectedInsect = insect;
             SetDataAsDirty();

@@ -25,9 +25,9 @@ namespace FlappyInsect.Module.CoinPool
             _view.SetCallbacks(OnMovePosition, OnDespawnCoin);
         }
 
-        public void OnAddCoin(AddCoinMessage message)
+        public void OnAddCoin(GameObject coin)
         {
-            DespawnCoin(message.Coin);
+            DespawnCoin(coin);
         }
 
         public void OnGameOver(GameOverMessage message)

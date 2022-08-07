@@ -14,7 +14,12 @@ namespace FlappyInsect.Boot
 
         protected override IMain GetMain()
         {
-            return GameLauncher.Instance;
+            return GameMain.Instance;
+        }
+
+        protected override ISplash GetSplash()
+        {
+            return SplashScreen.Instance;
         }
     }
 }

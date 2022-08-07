@@ -12,7 +12,6 @@ namespace FlappyInsect.Module.GameplayAudio
             Subscribe<UpdateSfxConfigMessage>(_audio.OnUpdateSfxConfig);
             Subscribe<MoveInsectMessage>(_audio.OnMoveInsect);
             Subscribe<AddScoreMessage>(_audio.OnAddScore);
-            Subscribe<AddCoinMessage>(_audio.OnAddCoin);
             Subscribe<GameOverMessage>(_audio.OnGameOver);
         }
 
@@ -21,7 +20,6 @@ namespace FlappyInsect.Module.GameplayAudio
             Unsubscribe<UpdateSfxConfigMessage>(_audio.OnUpdateSfxConfig);
             Unsubscribe<MoveInsectMessage>(_audio.OnMoveInsect);
             Unsubscribe<AddScoreMessage>(_audio.OnAddScore);
-            Unsubscribe<AddCoinMessage>(_audio.OnAddCoin);
             Unsubscribe<GameOverMessage>(_audio.OnGameOver);
         }
     }

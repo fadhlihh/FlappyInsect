@@ -3,11 +3,13 @@ using System.IO;
 using UnityEngine;
 using Agate.MVC.Base;
 using FlappyInsect.Module.InsectsData;
+using FlappyInsect.Message;
 
 namespace FlappyInsect.Module.ProgressData
 {
     public class ProgressDataController : DataController<ProgressDataController, ProgressDataModel, IProgressDataModel>
     {
+        InsectsDataController _insectData;
         public override IEnumerator Initialize()
         {
             yield return base.Initialize();
@@ -24,9 +26,20 @@ namespace FlappyInsect.Module.ProgressData
             _model.SetCoin(coin);
         }
 
-        public void ChangeSelectedInsect(InsectData selectedInsect)
+        public void OnChangeSelectedInsect(InsectChangeMessage message)
         {
-            _model.ChangeSelectedInsect(selectedInsect);
+            InsectData insect = _insectData.Model.InsectData.Insects.Find(item => string.Equals(item.Name, message.Name));
+            _model.SetSelectedInsect(insect);
+            Save();
+        }
+
+        public void OnPurchaseInsect(PurchaseInsectMessage message)
+        {
+            InsectData insect = _insectData.Model.InsectData.Insects.Find(item => string.Equals(message.Name, item.Name));
+            _model.AddCollectedInsect(insect);
+            int coin = _model.Progress.Coin - message.Cost;
+            _model.SetCoin(coin);
+            Save();
         }
 
         public void SaveProgress()

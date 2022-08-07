@@ -22,9 +22,9 @@ namespace FlappyInsect.Module.HUD
             view.SetCallbacks(OnSetting, OnInsectSelection, OnShop, OnGamePause);
         }
 
-        public void OnPurchaseInsect(PurchaseInsectMessage message)
+        public void OnPurchaseInsect(int cost)
         {
-            int totalCoin = _model.TotalCoin - message.Cost;
+            int totalCoin = _model.TotalCoin - cost;
             _model.SetTotalCoin(totalCoin);
         }
 

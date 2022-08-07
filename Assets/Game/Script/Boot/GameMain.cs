@@ -11,12 +11,14 @@ using FlappyInsect.Module.GameAudio;
 
 namespace FlappyInsect.Boot
 {
-    public class GameLauncher : BaseMain<GameLauncher>, IMain
+    public class GameMain : BaseMain<GameMain>, IMain
     {
         protected override IConnector[] GetConnectors()
         {
             return new IConnector[]{
-                new GameAudioConnector()
+                new ConfigDataConnector(),
+                new GameAudioConnector(),
+                new ProgressDataConnector()
             };
         }
 

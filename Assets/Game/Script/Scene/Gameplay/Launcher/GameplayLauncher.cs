@@ -38,6 +38,7 @@ namespace FlappyInsect.Scene.Gameplay
         protected override IConnector[] GetSceneConnectors()
         {
             return new IConnector[] {
+                new GameplayConnector(),
                 new TapInputConnector(),
                 new HUDConnector(),
                 new ShopConnector(),
@@ -47,7 +48,6 @@ namespace FlappyInsect.Scene.Gameplay
                 new ObstaclePoolConnector(),
                 new InsectConnector(),
                 new CoinPoolConnector(),
-                new CoinCalculatorConnector(),
                 new ScoreCalculatorConnector(),
                 new GameOverConnector(),
                 new GameplayAudioConnector()

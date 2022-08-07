@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using Agate.MVC.Base;
 using FlappyInsect.Message;
@@ -12,7 +11,6 @@ namespace FlappyInsect.Module.Shop
     {
         private InsectsDataController _insectData;
         private ProgressDataController _progressData;
-        private List<ShopItemController> _shopItemPool = new List<ShopItemController>();
 
         public override void SetView(ShopView view)
         {
@@ -26,19 +24,16 @@ namespace FlappyInsect.Module.Shop
             _view.Show();
         }
 
-        public void OnPurchaseInsect(PurchaseInsectMessage message)
+        public void OnPurchaseInsect(int cost)
         {
-            int totalCoin = _model.TotalCoin - message.Cost;
+            int totalCoin = _model.TotalCoin - cost;
             _model.SetTotalCoin(totalCoin);
-            _progressData.SetTotalCoin(totalCoin);
-            InsectData insect = _model.Insects.Find(item => string.Equals(message.Name, item.Name));
-            _model.AddCollectedInsect(insect);
-            _progressData.SaveProgress();
+            _model.SetCollectedInsect(_progressData.Model.Progress.Insects);
         }
 
         public void OnShowShopItem()
         {
-            if (_shopItemPool.Count <= 0)
+            if (_model.ShopItemCount <= 0)
             {
                 CreateShopItem();
             }
@@ -60,7 +55,7 @@ namespace FlappyInsect.Module.Shop
                 ShopItemController shopItem = new ShopItemController();
                 InjectDependencies(shopItem);
                 shopItem.Init(itemModel, itemView);
-                _shopItemPool.Add(shopItem);
+                _model.AddShopItem(shopItem);
             }
         }
 
@@ -70,7 +65,7 @@ namespace FlappyInsect.Module.Shop
             {
                 bool isSold = _model.CollectedInsects.Exists(item => string.Equals(item.Name, insect.Name));
                 bool isCostAffordable = insect.Cost <= _model.TotalCoin;
-                ShopItemController insectSelectionItem = _shopItemPool.Find(item => string.Equals(insect.Name, item.Model.Name));
+                ShopItemController insectSelectionItem = _model.FindShopItem(insect.Name);
                 insectSelectionItem.UpdateModelData(insect.Name, insect.Cost, isSold, isCostAffordable);
             }
         }

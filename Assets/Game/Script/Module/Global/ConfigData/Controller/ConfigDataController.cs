@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using Agate.MVC.Base;
+using FlappyInsect.Message;
 
 namespace FlappyInsect.Module.ConfigData
 {
@@ -12,18 +13,18 @@ namespace FlappyInsect.Module.ConfigData
             Load();
         }
 
-        public void SetBgm(bool value)
+        public void SetBgm(UpdateBgmConfigMessage message)
         {
-            _model.SetBgm(value);
-            int bgmValue = value ? 1 : 0;
+            _model.SetBgm(message.IsBgmOn);
+            int bgmValue = message.IsBgmOn ? 1 : 0;
             PlayerPrefs.SetInt("IsBgmOn", bgmValue);
             PlayerPrefs.Save();
         }
 
-        public void SetSfx(bool value)
+        public void SetSfx(UpdateSfxConfigMessage message)
         {
-            _model.SetSfx(value);
-            int sfxValue = value ? 1 : 0;
+            _model.SetSfx(message.IsSfxOn);
+            int sfxValue = message.IsSfxOn ? 1 : 0;
             PlayerPrefs.SetInt("IsSfxOn", sfxValue);
             PlayerPrefs.Save();
         }

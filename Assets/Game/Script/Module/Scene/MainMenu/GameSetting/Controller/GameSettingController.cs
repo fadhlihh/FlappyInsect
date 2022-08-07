@@ -36,14 +36,12 @@ namespace FlappyInsect.Module.GameSetting
         {
             _model.SetSfx(value);
             Publish<UpdateSfxConfigMessage>(new UpdateSfxConfigMessage(value));
-            _configData.SetSfx(value);
         }
 
         public void OnBgmToggle(bool value)
         {
             _model.SetBgm(value);
             Publish<UpdateBgmConfigMessage>(new UpdateBgmConfigMessage(value));
-            _configData.SetBgm(value);
         }
     }
 }

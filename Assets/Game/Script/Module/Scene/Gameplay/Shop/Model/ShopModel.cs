@@ -1,14 +1,19 @@
 using System.Collections.Generic;
 using Agate.MVC.Base;
 using FlappyInsect.Module.InsectsData;
+using FlappyInsect.Module.ShopItem;
 
 namespace FlappyInsect.Module.Shop
 {
     public class ShopModel : BaseModel, IShopModel
     {
+        private List<ShopItemController> _shopItemPool = new List<ShopItemController>();
+
         public int TotalCoin { get; private set; }
         public List<InsectData> CollectedInsects { get; private set; }
         public List<InsectData> Insects { get; private set; }
+        public int ShopItemCount => _shopItemPool.Count;
+
 
         public void SetModelData(int totalCoin, List<InsectData> insects, List<InsectData> collectedInsects)
         {
@@ -18,9 +23,9 @@ namespace FlappyInsect.Module.Shop
             SetDataAsDirty();
         }
 
-        public void AddCollectedInsect(InsectData insect)
+        public void SetCollectedInsect(List<InsectData> insect)
         {
-            CollectedInsects.Add(insect);
+            CollectedInsects = insect;
             SetDataAsDirty();
         }
 
@@ -28,6 +33,17 @@ namespace FlappyInsect.Module.Shop
         {
             TotalCoin = totalCoin;
             SetDataAsDirty();
+        }
+
+        public void AddShopItem(ShopItemController item)
+        {
+            _shopItemPool.Add(item);
+        }
+
+        public ShopItemController FindShopItem(string name)
+        {
+            ShopItemController shopItem = _shopItemPool.Find(item => string.Equals(name, item.Model.Name));
+            return shopItem;
         }
     }
 }
