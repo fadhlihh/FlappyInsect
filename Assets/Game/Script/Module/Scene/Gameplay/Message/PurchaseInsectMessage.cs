@@ -1,6 +1,6 @@
 namespace FlappyInsect.Message
 {
-    public class PurchaseInsectMessage
+    public struct PurchaseInsectMessage
     {
         public string Name { get; private set; }
         public int Cost { get; private set; }

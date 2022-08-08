@@ -1,4 +1,4 @@
 namespace FlappyInsect.Message
 {
-    public class AddScoreMessage { }
+    public struct AddScoreMessage { }
 }

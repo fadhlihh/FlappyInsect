@@ -1,6 +1,6 @@
 namespace FlappyInsect.Message
 {
-    public class InsectChangeMessage
+    public struct InsectChangeMessage
     {
         public string Name { get; private set; }
 

@@ -1,6 +1,6 @@
 namespace FlappyInsect.Message
 {
-    public class ShowSettingMessage
+    public struct ShowSettingMessage
     {
 
     }

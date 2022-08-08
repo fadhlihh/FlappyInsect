@@ -1,6 +1,6 @@
 namespace FlappyInsect.Message
 {
-    public class UpdateCoinMessage
+    public struct UpdateCoinMessage
     {
         public int Coin { get; }
         public UpdateCoinMessage(int coin)
