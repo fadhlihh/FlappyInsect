@@ -33,6 +33,7 @@ namespace FlappyInsect.Module.GameAudio
             GameObject bgmObject = GameObject.Instantiate(bgmPrefabs);
             GameObject.DontDestroyOnLoad(bgmObject);
             _bgm = bgmObject.GetComponent<AudioSource>();
+            _bgm.mute = true;
         }
     }
 }
